@@ -32,8 +32,6 @@ This repo gives you an AI agent that reaches out to **you** via Telegram — a p
 
 ## How It Works — The Big Picture
 
-Here's what you're building. It sounds complex. It's not — we'll walk through each piece.
-
 ```
 ┌──────────────────────────────────────────────────────┐
 │                   YOUR PHONE                         │
@@ -44,11 +42,11 @@ Here's what you're building. It sounds complex. It's not — we'll walk through 
 ┌──────────────────────────────────────────────────────┐
 │              YOUR SERVER (VPS or home PC)             │
 │                                                      │
-│  Hermes Agent  ←── the brain                         │
+│  Hermes Gateway ←── always-on daemon (not tmux!)     │
 │       │                                              │
-│       ├── reads your Telegram messages               │
+│       ├── connects to Telegram 24/7                  │
 │       ├── runs check-in workflows on schedule         │
-│       ├── sends replies back to Telegram             │
+│       ├── sends replies back to your phone           │
 │       └── saves everything to markdown files          │
 │                                                      │
 │  OpenCode API  ←── the intelligence (~$10/mo)        │
@@ -56,214 +54,251 @@ Here's what you're building. It sounds complex. It's not — we'll walk through 
 └──────────────────────────────────────────────────────┘
 ```
 
-**The key insight:** The agent runs on a server, but you talk to it from your phone via Telegram — just like texting a friend. You never need to SSH into the server to use it day-to-day. You only touch the server during initial setup.
+The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only SSH into the server during initial setup.
+
+---
+
+## Important: We Use the Official Installer — NOT pip
+
+Many Linux guides tell you to `pip install`. **That path is painful** — Python version conflicts, virtual environments, PEP 668 errors. Hermes has an official installer that handles everything automatically.
+
+The installer downloads and manages its own Python, Node.js, and all dependencies. You just need `git`, `curl`, and `xz-utils`.
+
+```bash
+# The only prerequisites (Ubuntu/Debian):
+sudo apt update && sudo apt install -y git curl xz-utils
+```
 
 ---
 
 ## Path A: Install on Your Own Computer (Simplest)
 
-**Best if:** You have a laptop/desktop that stays on most of the day, or you only need check-ins at specific times (morning/evening).
+**Best if:** You have a laptop/desktop that stays on most of the day.
+**Cost:** ~$10/mo (OpenCode API only)
 
-**Cost:** $10/mo (OpenCode API only)
+### Step A1: Install Hermes (Official Installer)
 
-### Step A1: Install Hermes Agent
-
-Open your terminal (Command Prompt on Windows, Terminal on Mac/Linux) and copy-paste:
+Open your terminal and run ONE command:
 
 ```bash
-# Install Hermes Agent
-pip install hermes-agent
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 ```
 
-### Step A2: Get Your API Key
+What happens: the installer downloads Hermes, sets up Python/Node.js for you, and puts `hermes` on your PATH. This takes 2-3 minutes.
 
-1. Go to [opencode.ai](https://opencode.ai) and sign up (free)
-2. Navigate to **API Keys** in your dashboard
-3. Click **Create Key** and copy it
-4. Add $10 credit — this will last about a month with normal use
+After it finishes, reload your shell:
 
-### Step A3: Clone This Repo & Configure
+```bash
+source ~/.bashrc   # or: source ~/.zshrc
+```
+
+Verify it worked:
+
+```bash
+hermes --version
+```
+
+> **🆘 Pitfall fix:** If `hermes` says "command not found", close and reopen your terminal. Still not working? Run `ls ~/.local/bin/hermes` — if it exists, add `export PATH="$HOME/.local/bin:$PATH"` to your `~/.bashrc`.
+
+### Step A2: Configure Provider & Model
+
+```bash
+hermes model
+```
+
+This walks you through choosing a provider interactively. For the cheapest option that works great:
+
+1. Select **OpenCode** (or "Custom provider")
+2. When asked for API key, paste your OpenCode key
+3. Choose model: `deepseek-v4-flash-free` (free tier) or `deepseek-v4-pro` (faster, ~$10/mo)
+
+> **🆘 Pitfall fix:** If you don't have an OpenCode key yet, go to [opencode.ai](https://opencode.ai) → sign up → API Keys → Create. Add $10 credit — lasts about a month.
+
+### Step A3: Clone This Repo
 
 ```bash
 git clone https://github.com/kevinyosef/hermes-configs.git
 cd hermes-configs
-cp config/config.example.yaml config/config.yaml
-```
-
-Now edit `config/config.yaml`. Replace these two lines:
-
-```yaml
-opencode_api_key: "sk-..."      # ← paste your OpenCode key here
-bot_token: "123456:ABC-DEF..."  # ← you'll get this next
 ```
 
 ### Step A4: Create Your Telegram Bot
 
-1. Open Telegram on your phone
-2. Search for **[@BotFather](https://t.me/BotFather)** — this is Telegram's official bot-creation tool
-3. Send the message: `/newbot`
-4. BotFather will ask for a name. Type something like `My ADHD Checkin Bot`
-5. Then a username ending in `bot`, like `my_checkin_bot`
-6. BotFather replies with a token — looks like `7123456789:AAHdqTcvCH1sGWQ...`
-7. Copy that token into your `config.yaml` as `bot_token`
+1. Open Telegram → search **@BotFather**
+2. Send: `/newbot`
+3. Name it (e.g. "My ADHD Checkin Bot")
+4. Username must end in `bot` (e.g. `my_adhd_bot`)
+5. BotFather gives you a token like `7123456789:AAHdqTcvCH1sGWQ...` — **save this!**
 
 ### Step A5: Find Your Telegram User ID
 
-The bot needs to know it should only talk to YOU:
+Search **@userinfobot** on Telegram → send any message → it replies with your numeric ID. Save this too.
 
-1. On Telegram, search for **[@userinfobot](https://t.me/userinfobot)**
-2. Send it any message — it replies with your numeric ID
-3. Copy that number into `config.yaml` as `allowed_user_id`
-
-### Step A6: Start the Agent
+### Step A6: Start the Gateway (The Always-On Daemon)
 
 ```bash
-hermes agent start --config config/config.yaml
+hermes gateway setup
 ```
 
-You'll see logs showing the agent starting. Once it says "ready" or "listening," open Telegram and send `/checkin` to your bot. You should get a reply within seconds.
+This walks you through connecting Telegram. When prompted:
+- **Platform:** Telegram
+- **Bot token:** Paste the token from Step A4
+- **Allowed users:** Your numeric ID from Step A5
 
-**⚠️ Important:** Your computer needs to be ON for scheduled check-ins to fire. If you shut down at night, the evening check-in won't send. For 24/7 coverage, use Path B below.
+Then start the gateway:
+
+```bash
+hermes gateway start
+```
+
+The gateway runs in the background as a daemon. Open Telegram, send any message to your bot — it replies within seconds.
+
+> **🆘 Pitfall fix:** If the bot doesn't respond, check `hermes gateway status`. If it says "stopped", check logs: `hermes gateway logs --tail 20`. Common issue: wrong bot token (copy-paste error) or API key not set.
+
+**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use Path B.
 
 ---
 
-## Path B: Install on a VPS (Runs 24/7, Access From Phone)
+## Path B: Install on a VPS (Runs 24/7)
 
-**Best if:** You want the agent always running, or your computer isn't always on. This costs $5/mo extra but means you never miss a check-in.
+**Best if:** You want the agent always running. $5/mo extra but you never miss a check-in.
+**Cost:** ~$15/mo total ($5 VPS + $10 OpenCode API)
 
-**Cost:** $15/mo total ($5 VPS + $10 OpenCode API)
+### Step B1: Get a VPS
 
-### Step B1: Get a VPS (5 Minutes)
+We recommend **Hetzner** — $5/mo, reliable, beginner-friendly control panel.
 
-We recommend **Hetzner** — $5/mo, reliable, and the control panel is beginner-friendly.
-
-1. Go to [hetzner.com/cloud](https://www.hetzner.com/cloud) and create an account
-2. Click **Create Server**
-3. Choose these options:
-   - **Location:** Nuremberg or Helsinki (closest to Africa/Europe)
+1. Go to [hetzner.com/cloud](https://www.hetzner.com/cloud) → create account
+2. Click **Create Server** → choose:
+   - **Location:** Nuremberg or Helsinki
    - **Image:** Ubuntu 24.04
    - **Type:** CX22 (1 vCPU, 2 GB RAM) — $4.59/mo
-   - **SSH Key:** You'll set this up next
-4. Click **Create & Buy Now**
+3. **SSH Key:** We'll set this up next
 
 ### Step B2: Set Up SSH Access
 
-SSH is how you connect to your server from your computer. It's like opening a secure terminal window into the remote machine.
-
-**On your local computer (not the VPS):**
+**On your local computer:**
 
 ```bash
-# Generate an SSH key (press Enter for all prompts — defaults are fine)
+# Generate SSH key (Enter for all prompts)
 ssh-keygen -t ed25519
 
-# Display your public key (you'll paste this into Hetzner)
+# Display your public key:
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Copy the entire output (starts with `ssh-ed25519...`).
+Copy the output (starts with `ssh-ed25519...`). Back in Hetzner, paste it into the **SSH Key** field during server creation. If server already exists: go to server → **SSH Keys** → **Add**.
 
-Back on Hetzner, during server creation, paste this into the **SSH Key** field. If you already created the server, go to your server → **SSH Keys** → **Add**.
+### Step B3: Connect & Install Hermes
 
-### Step B3: Connect to Your Server
-
-Hetzner will show your server's IP address (like `49.12.xxx.xxx`). From your computer:
+Hetzner shows your server IP (like `49.12.xxx.xxx`). Connect:
 
 ```bash
 ssh root@YOUR_SERVER_IP
+# Type 'yes' for fingerprint prompt
 ```
 
-Type `yes` when asked about fingerprint. You're now inside your server!
-
-### Step B4: Install Hermes on the Server
-
-Inside your SSH session, copy-paste these commands one at a time:
+Now install Hermes (official installer — no pip hell):
 
 ```bash
-# Update the system
-apt update && apt upgrade -y
+# Prerequisites
+apt update && apt install -y git curl xz-utils
 
-# Install prerequisites
-apt install -y python3 python3-pip git curl
+# Official installer (one command!)
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 
-# Install Hermes Agent
-pip install hermes-agent --break-system-packages
+# Reload shell
+source ~/.bashrc
 
-# Clone this repo
-git clone https://github.com/kevinyosef/hermes-configs.git
-cd hermes-configs
-cp config/config.example.yaml config/config.yaml
+# Verify
+hermes --version
 ```
 
-### Step B5: Configure (Same as Path A Steps A2-A5)
+> **🆘 Pitfall fix:** If the installer fails with "xz not found": `apt install -y xz-utils` and re-run. If it complains about permissions: make sure you're logged in as `root` (the default for new Hetzner servers). If the installer hangs: press Ctrl+C and re-run — it's idempotent (safe to retry).
 
-Edit `config/config.yaml` with your OpenCode key, Telegram bot token, and Telegram user ID:
+### Step B4: Configure Provider
 
 ```bash
-nano config/config.yaml
+hermes model
 ```
 
-In nano: use arrow keys to navigate, paste your values, then `Ctrl+X` → `Y` → `Enter` to save.
+Choose **OpenCode** → paste your API key → select `deepseek-v4-flash-free` (free tier).
 
-### Step B6: Start Hermes in the Background
+> **🆘 Pitfall fix:** If `hermes model` errors saying "config not found", run `hermes setup` first to initialize the config file, then try `hermes model` again.
+
+### Step B5: Set Up Telegram Gateway (The Always-On Daemon)
 
 ```bash
-# Install tmux so the agent keeps running after you disconnect
-apt install -y tmux
-
-# Start a persistent session
-tmux new -s hermes
-
-# Inside tmux, start the agent
-hermes agent start --config config/config.yaml
+hermes gateway setup
 ```
 
-To disconnect without stopping: press `Ctrl+B`, then `D`. To reconnect later: `tmux attach -t hermes`.
+Follow the prompts:
+- **Platform:** Telegram
+- **Bot token:** From @BotFather (see Path A Step A4)
+- **Allowed users:** Your Telegram numeric ID (from @userinfobot)
 
-Send `/checkin` to your bot on Telegram to test!
+Then start it as a daemon:
 
-### Step B7: Set Up Tailscale (Free — Access Your Server Securely)
+```bash
+hermes gateway start --daemonize
+```
 
-Tailscale creates a private network between your devices. You can access your server's web dashboard from your phone or laptop without exposing anything to the internet.
+The `--daemonize` flag makes it run in the background and survive you disconnecting from SSH. It will auto-restart if it crashes.
 
-**On your server (inside SSH):**
+> **🆘 Pitfall fix:** If `hermes gateway start` exits immediately without error, check `hermes gateway logs` — it might have started but failed to connect due to a bad token. If the gateway won't start at all: `hermes gateway setup` again and verify your bot token character by character.
+
+### Step B6: Verify It Works
+
+Open Telegram on your phone. Send any message to your bot. It should reply within seconds. Send `/checkin` to test the check-in workflow.
+
+To check gateway status anytime:
+
+```bash
+hermes gateway status    # Shows if running
+hermes gateway logs      # Shows recent output
+```
+
+> **🆘 Pitfall fix:** Bot not replying? Run through this checklist:
+> 1. `hermes gateway status` — is it "running"?
+> 2. `hermes gateway logs --tail 20` — any error messages?
+> 3. Did you message the RIGHT bot? (check the username)
+> 4. Is your API key valid? Run `hermes model` to verify
+> 5. Did you add your user ID to allowed users? The bot ignores messages from unknown IDs
+
+### Step B7: Set Up Tailscale (Free — Secure Remote Access)
+
+Tailscale creates a private network between your devices. You can SSH into your server and access the Hermes web dashboard without exposing ports to the internet.
+
+**On your server:**
 
 ```bash
 curl -fsSL https://tailscale.com/install.sh | sh
 tailscale up
 ```
 
-It prints a URL — open it in your browser to authenticate. Your server is now on your private Tailscale network.
+It prints a URL — open it in your browser to authenticate. Done.
 
-**On your phone:**
-1. Install the **Tailscale** app (iOS/Android — it's free)
-2. Sign in with the same account
-3. Your phone and server are now connected. You'll see the server listed in the app.
-
-**On your laptop (optional):**
-Download Tailscale from [tailscale.com/download](https://tailscale.com/download) — same account.
+**On your phone:** Install [Tailscale](https://tailscale.com/download) (iOS/Android, free) → sign in with same account → your server appears in the device list.
 
 **What Tailscale gives you:**
-- Access the Hermes web dashboard: open your browser and go to `http://[tailscale-ip]:8080` (get the IP from `tailscale status` on the server)
-- SSH without exposing port 22 to the internet: `ssh root@[tailscale-ip]`
-- Your bot communicates via Telegram (not Tailscale) — Tailscale is for YOU to manage the agent
+- SSH from your phone/laptop: `ssh root@[server-tailscale-ip]`
+- Web dashboard: open `http://[server-tailscale-ip]:8080` in your browser
+- No exposed ports. No passwords. Pure WireGuard.
 
-### How It All Connects to Your Phone
+### How It All Connects
 
 ```
 Your Phone                    Telegram Servers              Your VPS
 ┌──────────────┐              ┌──────────────┐           ┌─────────────────┐
-│ Telegram App │────msg──────▶│   Telegram    │───API────▶│  Hermes Agent   │
-│              │◀───reply─────│   Servers     │◀──API─────│  (tmux session)  │
+│ Telegram App │────msg──────▶│   Telegram    │───API────▶│ Hermes Gateway   │
+│              │◀───reply─────│   Servers     │◀──API─────│ (daemon, 24/7)  │
 └──────────────┘              └──────────────┘           │                 │
        │                                                  │  OpenCode API   │
-       │  Tailscale (for admin only)                      │  Markdown logs  │
+       │  Tailscale (admin only, secure)                  │  Markdown logs  │
        └──────────────────────────────────────────────────│  Tailscale      │
                                                           └─────────────────┘
 ```
 
-**Day-to-day use:** You only open Telegram on your phone. That's it. No SSH. No dashboard. Just text your bot like a friend.
-
-**When you need to check on the agent:** Open Tailscale app → your server is listed → SSH from your phone or laptop securely.
+Day-to-day: you only use Telegram. The gateway daemon handles everything automatically.
 
 ---
 
@@ -312,13 +347,16 @@ The Path A and Path B instructions above are written for complete beginners. Eve
 Yes — Path A runs on your personal computer. It only needs to be ON during check-in times (morning, evening, bedtime). Path B gives you 24/7 coverage for $5/mo.
 
 **Q: How do I check if the agent is still running?**
-On your phone, send `/checkin` to your bot. If it replies, the agent is alive. No need to SSH in. If no reply, use Tailscale to SSH and run `tmux attach -t hermes` to see what happened.
+On your phone, send `/checkin` to your bot. If it replies, the gateway is alive. No need to SSH in. To check server-side: `hermes gateway status` and `hermes gateway logs --tail 20`.
 
 **Q: How do I access the Hermes web dashboard?**
-After setting up Tailscale, open your browser and go to `http://[your-server-tailscale-ip]:8080`. You'll see a dashboard showing active workflows, logs, and config.
+After setting up Tailscale, open your browser to `http://[your-server-tailscale-ip]:8080`. You'll see a dashboard showing gateway status, active workflows, and logs.
 
 **Q: What if the server restarts?**
-Set up the auto-restart script in `scripts/auto-start.sh` (included in this repo). It ensures Hermes starts automatically if the server reboots.
+The gateway started with `--daemonize` auto-restarts. For reboots, create a simple systemd service — run `hermes gateway setup` and it will offer to create one for you automatically.
+
+**Q: What if `hermes model` or `hermes gateway` is "not found" after install?**
+Run `source ~/.bashrc` or close and reopen your terminal. The installer adds `hermes` to your PATH but the current shell doesn't know about it yet.
 
 **Q: Is my data private?**
 Yes. Everything is stored locally on your machine. Nothing goes to the cloud except your Telegram messages (which are encrypted) and API calls to OpenCode.
