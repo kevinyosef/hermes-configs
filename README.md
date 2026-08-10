@@ -154,7 +154,43 @@ The gateway runs in the background as a daemon. Open Telegram, send any message 
 
 > **🆘 Pitfall fix:** If the bot doesn't respond, check `hermes gateway status`. If it says "stopped", check logs: `hermes gateway logs --tail 20`. Common issue: wrong bot token (copy-paste error) or API key not set.
 
-**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use Path B.
+**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use Path B or the VPS option below.
+
+---
+
+## Path A (Windows): Install on Your Windows PC
+
+**Best if:** You're on Windows and your PC stays on most of the day.
+
+### Step WA1: Install Hermes (Official Windows Installer)
+
+Open **PowerShell** (right-click Start → Windows PowerShell) and run:
+
+```powershell
+irm https://hermes-agent.nousresearch.com/install.ps1 | iex
+```
+
+This downloads and installs everything automatically. After it finishes, close and reopen PowerShell.
+
+> **🆘 Pitfall fix:** If PowerShell blocks the script with an execution policy error, run this first: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` — then re-run the install command.
+
+Verify it worked:
+
+```powershell
+hermes --version
+```
+
+### Step WA2–WA5: Same as Path A
+
+From here, the steps are identical to Path A (Linux/Mac):
+- **WA2:** `hermes model` to configure OpenCode
+- **WA3:** `git clone https://github.com/kevinyosef/hermes-configs.git`
+- **WA4:** Create Telegram bot via @BotFather
+- **WA5:** `hermes gateway setup` → `hermes gateway start`
+
+All `hermes` commands work the same on Windows. The gateway runs as a background process.
+
+> **🆘 Pitfall fix:** If `git` is not found, install [Git for Windows](https://git-scm.com/download/win). If `hermes` is not found after install, restart PowerShell or your PC.
 
 ---
 
@@ -310,8 +346,10 @@ Day-to-day: you only use Telegram. The gateway daemon handles everything automat
 | VPS (optional, if not running locally) | $5 | Hetzner, DigitalOcean, or similar |
 | Telegram Bot API | $0 | Free, unlimited messages |
 | Hermes Agent | $0 | Open source, MIT licensed |
-| MindCheck workflows | $0 | Free, included in this repo |
+| Workflow prompts | $0 | Free, included in this repo |
 | **TOTAL** | **$10–15/mo** | |
+
+> **Note:** You do NOT need to manually edit config files. The commands `hermes model` and `hermes gateway setup` handle all configuration interactively. The `config/config.example.yaml` file in this repo is a reference — it shows what settings are available, not what you must edit.
 
 ### How This Setup Saves You Money
 
