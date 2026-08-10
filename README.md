@@ -71,6 +71,56 @@ sudo apt update && sudo apt install -y git curl xz-utils
 
 ---
 
+## Get Your OpenCode API Key (Do This First)
+
+Before installing anything, you need an API key. Here's what that means and how to get one.
+
+### What's an API Key?
+
+An **API key** is like a password that lets Hermes talk to the AI brain (the language model). Instead of you typing questions into ChatGPT's website, Hermes sends your messages through this key and gets responses back. The AI company charges per message — about $10/month for normal use.
+
+Think of it like prepaid phone credit. You add $10, and every time Hermes thinks, it uses a few cents. When the $10 runs out (usually a month), you add more.
+
+### Step-by-Step: Get Your Key
+
+**1. Go to [opencode.ai](https://opencode.ai)**
+
+Click the **Sign Up** button (top right). You can sign up with Google, GitHub, or email.
+
+**2. Open the Dashboard**
+
+After signing up, you'll land on the OpenCode dashboard. Look for **API Keys** in the left sidebar menu.
+
+**3. Create a New Key**
+
+Click the **Create API Key** button. Give it a name like "Hermes Agent" (the name doesn't matter — it's just a label for you).
+
+**4. Copy the Key Immediately**
+
+OpenCode shows you the key **once**. It looks like:
+
+```
+sk-opencode-a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6...
+```
+
+Click the **Copy** button. Paste it somewhere safe — a note on your phone, a text file, anywhere. You cannot see it again after you close the window.
+
+> **⚠️ If you lose the key, you have to create a new one. There's no "show key" button.**
+
+**5. Add Credit**
+
+In the sidebar, click **Billing** or **Usage**. Add $10 (minimum). This is prepaid — you're not signing up for a subscription. $10 typically lasts 3-5 weeks with normal check-in usage.
+
+**6. Keep Your Key Handy**
+
+You'll paste this key when you run `hermes model` later. The command will ask: "API key?" — paste it there.
+
+### What If I Already Have a Different API Key?
+
+If you already use OpenAI, Anthropic (Claude), or another provider — those keys also work. During `hermes model`, you can select any supported provider. OpenCode is recommended because it's cheapest for this use case (~$10/mo).
+
+---
+
 ## Choose Your Path
 
 Pick the row that matches your setup — jump directly:
@@ -119,13 +169,9 @@ hermes --version
 hermes model
 ```
 
-This walks you through choosing a provider interactively. For the cheapest option that works great:
+This walks you through choosing a provider interactively. Select **OpenCode** and paste the API key you got from [the guide above](#get-your-opencode-api-key-do-this-first).
 
-1. Select **OpenCode** (or "Custom provider")
-2. When asked for API key, paste your OpenCode key
-3. Choose model: `deepseek-v4-flash-free` (free tier) or `deepseek-v4-pro` (faster, ~$10/mo)
-
-> **🆘 Pitfall fix:** If you don't have an OpenCode key yet, go to [opencode.ai](https://opencode.ai) → sign up → API Keys → Create. Add $10 credit — lasts about a month.
+Choose model: `deepseek-v4-flash-free` (free tier, slower) or `deepseek-v4-pro` (faster, uses more credit).
 
 ### Step A3: Clone This Repo
 
