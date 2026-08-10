@@ -71,7 +71,20 @@ sudo apt update && sudo apt install -y git curl xz-utils
 
 ---
 
-## Path A: Install on Your Own Computer (Simplest)
+## Choose Your Path
+
+Pick the row that matches your setup — jump directly:
+
+| Your setup | Go to |
+|-----------|------|
+| 🐧 Linux or 🍎 Mac (laptop/desktop) | [Path 1: Linux / Mac](#path-1-linux--mac-local-install) |
+| 🪟 Windows PC | [Path 2: Windows](#path-2-windows-local-install) |
+| ☁️ VPS server (runs 24/7, ~$5/mo) | [Path 3: VPS Server](#path-3-vps-server-runs-247) |
+| Not technical / want it done for you | [Setup Services](#-done-for-you-setup-services) |
+
+---
+
+## Path 1: Linux / Mac (Local Install)
 
 **Best if:** You have a laptop/desktop that stays on most of the day.
 **Cost:** ~$10/mo (OpenCode API only)
@@ -154,11 +167,11 @@ The gateway runs in the background as a daemon. Open Telegram, send any message 
 
 > **🆘 Pitfall fix:** If the bot doesn't respond, check `hermes gateway status`. If it says "stopped", check logs: `hermes gateway logs --tail 20`. Common issue: wrong bot token (copy-paste error) or API key not set.
 
-**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use Path B or the VPS option below.
+**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use [Path 3: VPS Server](#path-3-vps-server-runs-247).
 
 ---
 
-## Path A (Windows): Install on Your Windows PC
+## Path 2: Windows (Local Install)
 
 **Best if:** You're on Windows and your PC stays on most of the day.
 
@@ -180,9 +193,9 @@ Verify it worked:
 hermes --version
 ```
 
-### Step WA2–WA5: Same as Path A
+### Step WA2–WA5: Same as Path 1
 
-From here, the steps are identical to Path A (Linux/Mac):
+From here, the steps are identical to Path 1 (Linux/Mac):
 - **WA2:** `hermes model` to configure OpenCode
 - **WA3:** `git clone https://github.com/kevinyosef/hermes-configs.git`
 - **WA4:** Create Telegram bot via @BotFather
@@ -194,7 +207,7 @@ All `hermes` commands work the same on Windows. The gateway runs as a background
 
 ---
 
-## Path B: Install on a VPS (Runs 24/7)
+## Path 3: VPS Server (Runs 24/7)
 
 **Best if:** You want the agent always running. $5/mo extra but you never miss a check-in.
 **Cost:** ~$15/mo total ($5 VPS + $10 OpenCode API)
@@ -269,7 +282,7 @@ hermes gateway setup
 
 Follow the prompts:
 - **Platform:** Telegram
-- **Bot token:** From @BotFather (see Path A Step A4)
+- **Bot token:** From @BotFather (see Path 1 Step A4)
 - **Allowed users:** Your Telegram numeric ID (from @userinfobot)
 
 Then start it as a daemon:
@@ -379,10 +392,10 @@ Premium files describe what each workflow does and how to get it.
 ## FAQ
 
 **Q: I don't know anything about servers or terminals. Can I still do this?**
-The Path A and Path B instructions above are written for complete beginners. Every command is explained. You just copy-paste. If you get stuck at any step, DM me.
+The Path 1, Path 2, and Path 3 instructions above are written for complete beginners. Every command is explained. You just copy-paste. If you get stuck at any step, DM me.
 
 **Q: Can I run this without a VPS?**
-Yes — Path A runs on your personal computer. It only needs to be ON during check-in times (morning, evening, bedtime). Path B gives you 24/7 coverage for $5/mo.
+Yes — Path 1 or Path 2 runs on your personal computer. It only needs to be ON during check-in times (morning, evening, bedtime). Path 3 gives you 24/7 coverage for $5/mo.
 
 **Q: How do I check if the agent is still running?**
 On your phone, send `/checkin` to your bot. If it replies, the gateway is alive. No need to SSH in. To check server-side: `hermes gateway status` and `hermes gateway logs --tail 20`.
