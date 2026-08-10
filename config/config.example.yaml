@@ -1,0 +1,64 @@
+# Hermes Agent Configuration for ADHD/Bipolar
+# https://github.com/kevinyosef/hermes-configs
+# Copy this to config.yaml and fill in your details
+
+# === REQUIRED ===
+
+# Your OpenCode API key (from https://opencode.ai → API Keys)
+opencode_api_key: "sk-..."
+
+# === TELEGRAM BOT ===
+
+telegram:
+  # Get this from @BotFather on Telegram
+  bot_token: "123456:ABC-DEF..."
+  # Your Telegram user ID (bot only talks to you)
+  # Get it by messaging @userinfobot on Telegram
+  allowed_user_id: ""
+
+# === WORKFLOW SETTINGS ===
+
+workflows:
+  morning_anchor:
+    enabled: true
+    time: "07:00"
+    timezone: "Africa/Nairobi"  # Change to your timezone
+  
+  daily_checkin:
+    enabled: true
+    time: "20:00"
+    timezone: "Africa/Nairobi"
+  
+  burnout_detection:
+    enabled: true
+    day: "sunday"
+    time: "10:00"
+    # How many days of decline before alerting
+    threshold_days: 3
+  
+  task_unstucker:
+    enabled: true
+    # Triggered manually by sending "stuck" or "/unstuck" to the bot
+  
+  job_hunt:
+    enabled: false  # Enable when actively job hunting
+    # Triggered manually by sending "jobs" or "/jobs" to the bot
+  
+  evening_winddown:
+    enabled: true
+    time: "21:30"
+    timezone: "Africa/Nairobi"
+
+# === STORAGE ===
+
+# Where your data is saved (markdown files)
+data_dir: "./data"
+
+# === ADVANCED ===
+
+# Model settings (leave as default unless you know what you're doing)
+model:
+  provider: "opencode"
+  model: "deepseek-v4-flash-free"  # Free tier — change for faster responses
+  temperature: 0.7
+  max_tokens: 500

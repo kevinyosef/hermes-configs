@@ -1,0 +1,15 @@
+# MindCheck — private data
+data/
+*.log
+
+# Config with secrets
+config/config.yaml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
