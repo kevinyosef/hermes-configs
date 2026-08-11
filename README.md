@@ -131,18 +131,18 @@ Those work too. Pick your provider during `hermes model`.
 | | | |
 |:--:|:--:|:--:|
 | ### 💼 Starter Pack | ### ⚡ Done-For-You 🏆 | ### 🎯 Premium |
-| **$45** | **$150–250** | **$400–600** |
+| **$60** | **$150–250** | **$400–600** |
 | one-time | one-time | one-time |
 | | | |
 | ✅ Full repo access | ✅ Everything in Starter | ✅ Everything in Done-For-You |
 | ✅ 5 workflow templates | ✅ 45-min live setup call | ✅ 5 custom workflows |
-| ✅ 15-min video walkthrough | ✅ Full installation on your machine/VPS | ✅ Monthly check-in calls (3 months) |
-| ✅ 1 week email support | ✅ Telegram bot connected & tested | ✅ Priority support |
-| | ✅ Workflows customized to YOUR routine | ✅ Custom integrations (Notion, Calendar, etc.) |
+| ✅ **One-click deploy kit** — paste 1 file, live in 4 min | ✅ Full installation on your machine/VPS | ✅ Monthly check-in calls (3 months) |
+| ✅ 15-min video walkthrough | ✅ Telegram bot connected & tested | ✅ Priority support |
+| ✅ 1 week email support | ✅ Workflows customized to YOUR routine | ✅ Custom integrations (Notion, Calendar, etc.) |
 | | ✅ 2 weeks follow-up support | |
 | | ✅ Setup reference guide | |
 | | | |
-| **For the time-poor dev** | **Most popular — just works** | **For professionals who want a partner** |
+| **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
 | [Get Starter →](#get-in-touch) | [Get Done-For-You →](#get-in-touch) | [Get Premium →](#get-in-touch) |
 

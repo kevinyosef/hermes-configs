@@ -1,8 +1,8 @@
 # Deploy Kit — One-Click Hermes + WebUI + Tailscale
 
-**For the Done-For-You tier.** Turns the $150 setup into: buyer creates a VPS,
-pastes one file, done. Works on **Hetzner, DigitalOcean, Vultr, Linode/Akamai,
-AWS Lightsail** — any host with a user-data / startup-script field.
+**Part of the Starter Pack tier ($60).** The selling point: **zero technical friction** — no terminal, no SSH, no config files. The buyer creates a VPS, pastes one file, and is live in ~4 minutes. Works on **Hetzner, DigitalOcean, Vultr, Linode/Akamai, AWS Lightsail** — any host with a user-data / startup-script field.
+
+> Buyer needs a VPS account (~$5/mo — Hetzner or DigitalOcean are easiest). Everything else — Docker, Hermes, WebUI, Tailscale, config — is handled by this script.
 
 ## What the buyer does
 
