@@ -4,7 +4,7 @@ Every workflow in this repo — what it does, how to install it, how to customiz
 
 ## Free Workflows
 
-These are ready to use. Copy the file into your Hermes config directory after setup (see [INSTALL.md](INSTALL.md)).
+These are ready to use — no files to copy, no config to edit.
 
 | Workflow | File | What it does |
 |----------|------|-------------|
@@ -14,10 +14,12 @@ These are ready to use. Copy the file into your Hermes config directory after se
 
 ### How to Install a Free Workflow
 
-1. After running `hermes gateway setup` (see [INSTALL.md](INSTALL.md)), open Hermes' workflow/cron config.
-2. Copy the contents of the workflow file into a new cron entry.
-3. Set the schedule to match the workflow (7:00 for Morning Anchor, 20:00 for Daily Check-in, 21:30 for Evening Wind-Down).
-4. Restart the gateway: `hermes gateway restart`.
+1. Complete the setup in [INSTALL.md](INSTALL.md) — install Hermes, connect a provider, set up the Telegram bot and gateway.
+2. Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot)**.
+3. Copy each prompt and send it to your bot in Telegram. The agent schedules the check-in and confirms.
+4. Check it landed: send `/checkin` or ask "list my scheduled check-ins".
+
+> **Why no file copying?** The workflow files in this repo show you exactly what each check-in contains, so you can read and customize them. But installation happens through the conversation — your agent sets up its own schedule from the prompts. Works identically on Linux, Mac, Windows, and VPS.
 
 ### How to Customize
 

@@ -6,16 +6,18 @@ Full setup instructions for all platforms. **Do these steps after reading the [R
 
 ## Before You Start
 
-### Get Your OpenCode API Key (Do This First)
+### Choose a Model Provider (Free Option Available)
 
-An **API key** is like a password that lets Hermes talk to the AI brain (the language model). Instead of you typing into ChatGPT's website, Hermes sends your messages through this key and gets responses back. The company charges per message — about $10/month for normal use. Think of it like prepaid phone credit.
+Your agent needs a "brain" — a model provider. Two ways:
 
-**Step-by-step:**
+**🆓 Option 1 — Free (recommended to start):** run `hermes setup` and pick **Quick Setup (Nous Portal)**. Logs you in with Google/GitHub, includes 300+ models, no API key needed. $0.
+
+**💳 Option 2 — OpenCode (~$10/mo):** an API key gives you pay-per-use access. An **API key** is like a password that lets Hermes talk to the AI brain; the company charges per message. Here's how to get one:
 
 1. Go to [opencode.ai](https://opencode.ai) → click **Sign Up** (top right). Google, GitHub, or email all work.
 2. Open the dashboard → look for **API Keys** in the left sidebar.
 3. Click **Create API Key** → name it "Hermes Agent" (the name doesn't matter).
-4. **Copy the key immediately.** It shows once, like `sk-opencode-a1b2c3d4...`. Paste it somewhere safe. You cannot see it again after closing the window.
+4. **Copy the key immediately.** It shows once, like `sk-ope...c3d4...`. Paste it somewhere safe. You cannot see it again after closing the window.
 5. Click **Billing** → add $10 (prepaid, not a subscription). Lasts 3–5 weeks with normal check-in usage.
 
 > **Already have OpenAI/Anthropic keys?** Those work too — pick your provider during `hermes model`.
@@ -75,16 +77,11 @@ hermes --version
 hermes model
 ```
 
-Select **OpenCode** → paste your API key → choose model: `deepseek-v4-flash-free` (free tier, slower) or `deepseek-v4-pro` (faster, uses more credit).
+Select your provider from [the options above](#choose-a-model-provider-free-option-available) — **Nous Portal** (free) or **OpenCode** (paste your API key). Then pick a model: `deepseek-v4-flash-free` (free tier, slower) or `deepseek-v4-pro` (faster, uses more credit).
 
-### Step A3: Clone This Repo
+> Never used `hermes model`? The simplest route: run `hermes setup` instead and choose **Quick Setup** — it walks you through provider + tools with prompts, no prior knowledge needed.
 
-```bash
-git clone https://github.com/kevinyosef/hermes-configs.git
-cd hermes-configs
-```
-
-### Step A4: Create Your Telegram Bot
+### Step A3: Create Your Telegram Bot
 
 1. Open Telegram → search **@BotFather**
 2. Send: `/newbot`
@@ -92,11 +89,11 @@ cd hermes-configs
 4. Username must end in `bot` (e.g. `my_adhd_bot`)
 5. BotFather gives a token like `7123456789:AAHdqTcvCH1sGWQ...` — **save it!**
 
-### Step A5: Find Your Telegram User ID
+### Step A4: Find Your Telegram User ID
 
 Search **@userinfobot** on Telegram → send any message → it replies with your numeric ID. Save this too.
 
-### Step A6: Start the Gateway (The Always-On Daemon)
+### Step A5: Start the Gateway (The Always-On Daemon)
 
 ```bash
 hermes gateway setup
@@ -113,7 +110,15 @@ Open Telegram → send any message to your bot → it replies within seconds.
 
 > **🆘 Fix:** Bot not responding? `hermes gateway status`, then `hermes gateway logs --tail 20`. Most common: wrong bot token or API key not set.
 
-**⚠️ Your computer must be ON for check-ins to fire.** For 24/7, use [Path 3](#path-3-vps-server-runs-247).
+### Step A6: Install the Workflows (No Cloning Needed)
+
+You don't need to clone this repo or copy any files. The workflows install themselves — you just paste 3 setup prompts to your bot and the agent schedules everything.
+
+Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot)** and send each prompt to your bot in Telegram. The bot confirms when each check-in is scheduled.
+
+> 💡 The prompts live in this repo for reference and customization, but cloning is optional — you can read them right here on GitHub, or in `WORKFLOWS.md`.
+
+For 24/7 coverage, use [Path 3](#path-3-vps-server-runs-247).
 
 ---
 
@@ -138,15 +143,16 @@ Verify:
 ```powershell
 hermes --version
 ```
+### Step WA2–WA6: Same as Path 1
 
-### Step WA2–WA5: Same as Path 1
-
-- **WA2:** `hermes model` to configure OpenCode
-- **WA3:** `git clone https://github.com/kevinyosef/hermes-configs.git`
-- **WA4:** Create Telegram bot via @BotFather
+From here, the steps are identical to Path 1 (Linux/Mac):
+- **WA2:** `hermes model` (or `hermes setup` → Quick Setup) to configure the provider
+- **WA3:** Create Telegram bot via @BotFather
+- **WA4:** Find your user ID via @userinfobot
 - **WA5:** `hermes gateway setup` → `hermes gateway start`
+- **WA6:** Install the workflows by pasting the [setup prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot) to your bot
 
-> **🆘 Fix:** `git` not found → install [Git for Windows](https://git-scm.com/download/win). `hermes` not found → restart PowerShell or your PC.
+> **🆘 Fix:** `git` not found → install [Git for Windows](https://git-scm.com/download/win). `hermes` not found → restart PowerShell or your PC. (Note: git is only needed if you want to clone the repo — the setup prompts work without cloning.)
 
 ---
 
@@ -193,7 +199,7 @@ hermes --version
 hermes model
 ```
 
-OpenCode → paste API key → `deepseek-v4-flash-free`.
+Select your provider — **Nous Portal** (free) or **OpenCode** (paste your API key) — then pick `deepseek-v4-flash-free` (free tier).
 
 > **🆘 Fix:** "config not found" error → run `hermes setup` first, then `hermes model` again.
 
@@ -211,9 +217,12 @@ hermes gateway start --daemonize
 
 `--daemonize` runs it in the background, survives SSH disconnect, auto-restarts on crash.
 
-### Step B6: Verify
+### Step B6: Verify & Install Workflows
 
-Send any message to your bot on Telegram → replies within seconds. `/checkin` tests the workflow.
+1. **Verify the bot:** send any message on Telegram → it replies within seconds. `/checkin` tests the check-in workflow.
+2. **Install the free workflows:** paste the [setup prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot) to your bot in Telegram — no files to copy. The agent schedules the check-ins itself.
+
+Check gateway status anytime:
 
 ```bash
 hermes gateway status    # Is it running?

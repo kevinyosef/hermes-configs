@@ -66,11 +66,14 @@ I built this because I had to. Then I realized half of r/ADHD_Programmers needs 
 │       ├── runs check-in workflows on schedule         │
 │       ├── sends replies back to your phone           │
 │       └── saves everything to markdown files          │
-│  OpenCode API  ←── the intelligence (~$10/mo)        │
+│  Model provider ←── $0 free, or ~$10/mo              │
 └──────────────────────────────────────────────────────┘
 ```
 
-The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only touch the technical stuff during setup. [Full installation guide →](INSTALL.md)
+The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only touch the technical stuff during setup.
+
+**🚀 Quick start:** [SETUP.md — 15-minute guided walkthrough](SETUP.md) (works with your phone alone).
+**🔧 Detailed guide:** [INSTALL.md — all platforms & pitfalls](INSTALL.md).
 
 ---
 
@@ -78,17 +81,17 @@ The agent runs on a server. You talk to it from your phone via Telegram — like
 
 | Item | Monthly Cost | Notes |
 |------|-------------|-------|
-| OpenCode API (zen models) | ~$8–10 | Generous free tier covers most usage |
+| Model provider | $0–10 | **Free:** Nous Portal (Quick Setup). **~$10:** OpenCode for pay-per-use |
 | VPS (optional, 24/7 coverage) | $5 | Hetzner, DigitalOcean, or similar |
 | Telegram Bot API | $0 | Free, unlimited messages |
 | Hermes Agent | $0 | Open source, MIT licensed |
 | Workflow prompts | $0 | Free, included in this repo |
-| **TOTAL** | **$10–15/mo** | |
+| **TOTAL** | **$0–15/mo** | Start free, upgrade if you want |
 
 ### This Setup Pays for Itself
 
 - **Replaces $200+/mo in subscriptions** — Notion AI ($10) + Motion ($19) + Sunsama ($20) + Todoist Pro ($5) + coaching ($150+/session)
-- **Efficient cron design** — the agent only calls the API during check-ins (3x/day), not every minute. Your $10 lasts the full month.
+- **Efficient cron design** — the agent only calls the API during check-ins (3x/day), not every minute. Even the paid tier stays under $10/mo.
 - **No vendor lock-in** — your data is plain markdown. Leave anytime. Export anywhere.
 - **One API for everything** — no ChatGPT Plus ($20) + Claude Pro ($20) + scattered tools.
 
@@ -97,7 +100,7 @@ The agent runs on a server. You talk to it from your phone via Telegram — like
 ## FAQ
 
 **Q: Is my data private?**
-Yes. Everything is stored locally on your machine. Nothing goes to the cloud except your Telegram messages (which are encrypted) and API calls to OpenCode.
+Yes. Everything is stored locally on your machine. Nothing goes to the cloud except your Telegram messages (which are encrypted) and API calls to your model provider.
 
 **Q: I'm not technical at all. Can I still do this?**
 Yes — that's exactly what the setup services below are for. You don't touch the terminal. I set everything up for you, test it, and hand you a working system.
@@ -151,7 +154,10 @@ Those work too. Pick your provider during `hermes model`.
 
 ## Get In Touch
 
-Prefer to build it yourself? **[Full FREE installation guide →](INSTALL.md)**
+Prefer to build it yourself? Two free paths:
+
+- **🚀 Guided (recommended):** [SETUP.md](SETUP.md) — 3 parts, copy-paste, works from your phone
+- **🔧 Detailed:** [INSTALL.md](INSTALL.md) — every platform, every pitfall, full terminal walkthrough
 
 Want help, or want to join the community? Two ways:
 
