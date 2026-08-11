@@ -146,11 +146,13 @@ Those work too. Pick your provider during `hermes model`.
 | | | ✅ 🎓 1:1 onboarding + usage coaching sessions |
 | **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
-| [Get Starter →](#get-in-touch) | [Schedule Done-For-You →](https://zcal.co/i/FwKyI-4B) | [Schedule Premium →](https://zcal.co/i/FwKyI-4B) |
+| [Get Starter →](https://buy.polar.sh/b4f99af7-e1d8-4300-832a-14547423943c) | [Get Done-For-You →](https://buy.polar.sh/85c2b008-73e8-40d6-8e37-45751803e500) | [Get Premium →](https://buy.polar.sh/6463fcaf-3fce-447e-884f-fafaa8bb44a2) |
 
 </div>
 
-> **🛡️ Risk reversal:** Not happy after your setup call? Full refund, no questions asked. I'd rather you have a working system than keep your money.
+> **🛡️ Risk reversal:** Not happy with your purchase? Full refund, no questions asked — just email **kevinyosef54@gmail.com**. I'd rather you have a working system than keep your money.
+
+> 📅 **After you pay:** you'll get a booking link to schedule your setup call (Done-For-You & Premium). The call is where we do the work together — no sales pitch, just setup.
 
 > 💡 **One-time cost caveats:** The Starter Pack's one-click deploy kit needs a VPS (~$5/mo, ~$60/yr) — Hetzner or DigitalOcean. The Done-For-You setup takes **2–4 hours of your time** across the call (account creation, questions, personalization). You're paying for my expertise AND your time savings — the work is still yours to configure with me.
 
