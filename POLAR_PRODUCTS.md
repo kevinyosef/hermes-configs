@@ -6,15 +6,20 @@ All legacy products (Config Setup, Desktop Integration, Server, Messaging, Bitwa
 
 ## Active Products
 
-| Tier | Price | Product ID | Price ID | Buy Link |
-|------|-------|-----------|----------|----------|
-| 💼 Starter Pack | $60 one-time | `0b31afe3-7f38-4482-bf10-9aa735ef2c91` | `b4f99af7-e1d8-4300-832a-14547423943c` | https://buy.polar.sh/b4f99af7-e1d8-4300-832a-14547423943c |
-| ⚡ Done-For-You | $199 one-time | `76798192-f86f-4723-99b1-30bb1b16b46a` | `85c2b008-73e8-40d6-8e37-45751803e500` | https://buy.polar.sh/85c2b008-73e8-40d6-8e37-45751803e500 |
-| 🎯 Premium | $400 one-time | `d18b8cb1-6839-4229-a559-882766edb40e` | `6463fcaf-3fce-447e-884f-fafaa8bb44a2` | https://buy.polar.sh/6463fcaf-3fce-447e-884f-fafaa8bb44a2 |
+Checkout links created 2026-08-11 via `POST /v1/checkout-links/` (Stripe). The `polar_cl_...` token is the checkout link's `client_secret`; the buy URL is `https://buy.polar.sh/<client_secret>`.
+
+| Tier | Price | Product ID | Price ID | Checkout Link ID (`polar_cl_`) | Buy Link |
+|------|-------|-----------|----------|----------|----------|
+| 💼 Starter Pack | $60 one-time | `0b31afe3-7f38-4482-bf10-9aa735ef2c91` | `b4f99af7-e1d8-4300-832a-14547423943c` | `polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva` | https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva |
+| ⚡ Done-For-You | $199 one-time | `76798192-f86f-4723-99b1-30bb1b16b46a` | `85c2b008-73e8-40d6-8e37-45751803e500` | `polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn` | https://buy.polar.sh/polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn |
+| 🎯 Premium | $599 one-time (was $400 — old price `6463fcaf...` archived) | `d18b8cb1-6839-4229-a559-882766edb40e` | `2571ffbe-50bc-47d7-9d29-b87e40e69476` | `polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn` | https://buy.polar.sh/polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn |
 
 ## API Notes (Cloudflare)
 
 - Base: `https://api.polar.sh/v1` (products list/create at `/products`, update at `/products/{id}`, archive via `PATCH {"is_archived": true}` — DELETE returns 405, archive is the supported path).
+- **Checkout links (REAL buy links):** `POST /v1/checkout-links/` with body `{"payment_processor": "stripe", "product_price_id": "<price_id>", "label": "<optional>"}` (schema `CheckoutLinkCreateProductPrice`). Response: `id` (UUID), `client_secret` (`polar_cl_...`), `url` = `https://buy.polar.sh/<client_secret>`. Verify with `GET /v1/checkout-links/{id}`.
+- **⚠️ `https://buy.polar.sh/<price_id>` is NOT a valid checkout link** — buy.polar.sh returns HTTP 200 for *any* path (it serves the Polar marketing homepage). A plain URL check proves nothing. Verify checkout links by **content**: fetch the URL and confirm it redirects to `polar.sh/checkout/polar_c_...` and the page contains the product name + checkout markup (not marketing copy like "A financial substrate for modern software").
+- **Archived prices reject checkout-link creation** with HTTP 422 `"Price is archived."` — only active prices work. There are no price-level API endpoints; prices are managed via `PATCH /products/{id}`. When the offer changes, archive the old price/product and create a fresh one (never resurrect archived prices).
 - **Cloudflare WAF requires a browser-like `User-Agent` + `Accept` header** — bare urllib gets 403 error 1010; curl with default UA works.
 - Redirects: API issues 307 on some endpoints; follow `Location` (curl `-L`).
 - Amounts are in **cents** (`price_amount`), `amount_type: "fixed"` (not `"type"`).

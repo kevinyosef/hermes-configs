@@ -146,7 +146,7 @@ Those work too. Pick your provider during `hermes model`.
 | | | ✅ 🎓 1:1 onboarding + usage coaching sessions |
 | **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
-| [Get Starter →](https://buy.polar.sh/b4f99af7-e1d8-4300-832a-14547423943c) | [Get Done-For-You →](https://buy.polar.sh/85c2b008-73e8-40d6-8e37-45751803e500) | [Get Premium →](https://buy.polar.sh/6463fcaf-3fce-447e-884f-fafaa8bb44a2) |
+| [Get Starter →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) | [Get Done-For-You →](https://buy.polar.sh/polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn) | [Get Premium →](https://buy.polar.sh/polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn) |
 
 </div>
 
