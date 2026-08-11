@@ -146,7 +146,7 @@ Those work too. Pick your provider during `hermes model`.
 | | | ✅ 🎓 1:1 onboarding + usage coaching sessions |
 | **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
-| [Get Starter →](#get-in-touch) | [Schedule Done-For-You →](CALENDAR_LINK_DFY) | [Schedule Premium →](CALENDAR_LINK_PREMIUM) |
+| [Get Starter →](#get-in-touch) | [Schedule Done-For-You →](https://zcal.co/i/FwKyI-4B) | [Schedule Premium →](https://zcal.co/i/FwKyI-4B) |
 
 </div>
 
