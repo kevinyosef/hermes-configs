@@ -56,25 +56,40 @@ hermes gateway start
 
 ---
 
-## Part 3 — The Setup Prompts (Paste These to Your Bot)
+## Part 3 — The Setup Prompts (Copy the Full Workflows)
 
-**Copy each prompt below and send it to your bot in Telegram. The bot does the rest — it will schedule the check-ins, remember your preferences, and confirm when done.**
+The short prompts are nice, but the **full workflow prompts** in this repo are the real deal — they contain the rules, tone, and examples that make the agent feel human. Copy those instead.
 
-### 🌅 Prompt 1 — Morning Anchor (do this first)
+**Here's the pattern for each workflow:**
 
-> Set up a recurring daily check-in for me at 7:00 AM. Message me: "Morning. What's the ONE thing that matters most today?" Then, if I reply, ask me to rate my energy 1-5 and remind me to take my medication if I mention I haven't. Keep it short and warm. Confirm when it's scheduled.
+### 🌅 Workflow 1 — Morning Anchor (do this first)
 
-### 📊 Prompt 2 — Daily Check-In (evening)
+1. Open **`workflows/morning-anchor.md`** in this repo (tap it in the file list, or [click here](workflows/morning-anchor.md)).
+2. Find the **System Prompt** block — it's the text inside the grey box under the `## System Prompt` heading.
+3. Copy ALL of it. On GitHub, hover the code block and tap the **copy icon** (top-right corner of the box) — no need to select text manually.
+4. Paste it to your bot, then add this instruction:
 
-> Set up a recurring daily check-in for me at 8:00 PM. Ask me three quick questions: mood (1-5), energy (1-5), and "what's one win today, however small?" Tell me I can reply with voice notes or just one word. Log my answers so we can spot patterns later. Confirm when it's scheduled.
+> — and set this up as a recurring check-in every day at 7:00 AM. Confirm when it's scheduled.
 
-### 🌙 Prompt 3 — Evening Wind-Down (bedtime)
+### 📊 Workflow 2 — Daily Check-In
 
-> Set up a recurring daily reminder for me at 9:30 PM called "wind-down." Tell me: screen time ends in 30 minutes, lights dim, and suggest a 3-minute breathing exercise (breathe in 4 counts, out 6 counts). Remind me that sleep is the single biggest lever for mood stability. Confirm when it's scheduled.
+1. Open **`workflows/daily-checkin.md`** ([click here](workflows/daily-checkin.md)) and copy the System Prompt block the same way.
+2. Paste it to your bot, then add:
 
-**That's it. You now have an AI companion that checks on YOU — every day, on the app you already use.**
+> — and set this up as a recurring check-in every day at 8:00 PM. Confirm when it's scheduled.
 
-> 💡 Want your check-ins customized? Just tell the bot: "change my morning check-in to 9am" or "add a question about food." The agent updates it on the spot.
+### 🌙 Workflow 3 — Evening Wind-Down
+
+1. Open **`workflows/evening-winddown.md`** ([click here](workflows/evening-winddown.md)) and copy the System Prompt block.
+2. Paste it to your bot, then add:
+
+> — and set this up as a recurring reminder every day at 9:30 PM. Confirm when it's scheduled.
+
+**That's it. You now have an AI companion that checks on YOU — with the full personality and rules baked in — every day, on the app you already use.**
+
+> 💡 **Not on GitHub?** If you cloned the repo, the files are in the `workflows/` folder on your machine — open them in any text editor and copy from there.
+
+> 💡 **Want changes?** Just tell the bot: "change my morning check-in to 9am" or "add a question about food." The agent updates it on the spot.
 
 ---
 

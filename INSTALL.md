@@ -114,7 +114,7 @@ Open Telegram → send any message to your bot → it replies within seconds.
 
 You don't need to clone this repo or copy any files. The workflows install themselves — you just paste 3 setup prompts to your bot and the agent schedules everything.
 
-Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot)** and send each prompt to your bot in Telegram. The bot confirms when each check-in is scheduled.
+Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows)** and send each prompt to your bot in Telegram. The bot confirms when each check-in is scheduled.
 
 > 💡 The prompts live in this repo for reference and customization, but cloning is optional — you can read them right here on GitHub, or in `WORKFLOWS.md`.
 
@@ -150,7 +150,7 @@ From here, the steps are identical to Path 1 (Linux/Mac):
 - **WA3:** Create Telegram bot via @BotFather
 - **WA4:** Find your user ID via @userinfobot
 - **WA5:** `hermes gateway setup` → `hermes gateway start`
-- **WA6:** Install the workflows by pasting the [setup prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot) to your bot
+- **WA6:** Install the workflows by pasting the [setup prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows) to your bot
 
 > **🆘 Fix:** `git` not found → install [Git for Windows](https://git-scm.com/download/win). `hermes` not found → restart PowerShell or your PC. (Note: git is only needed if you want to clone the repo — the setup prompts work without cloning.)
 
@@ -220,7 +220,7 @@ hermes gateway start --daemonize
 ### Step B6: Verify & Install Workflows
 
 1. **Verify the bot:** send any message on Telegram → it replies within seconds. `/checkin` tests the check-in workflow.
-2. **Install the free workflows:** paste the [setup prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot) to your bot in Telegram — no files to copy. The agent schedules the check-ins itself.
+2. **Install the free workflows:** paste the [setup prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows) to your bot in Telegram — no files to copy. The agent schedules the check-ins itself.
 
 Check gateway status anytime:
 

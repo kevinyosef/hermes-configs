@@ -15,8 +15,8 @@ These are ready to use — no files to copy, no config to edit.
 ### How to Install a Free Workflow
 
 1. Complete the setup in [INSTALL.md](INSTALL.md) — install Hermes, connect a provider, set up the Telegram bot and gateway.
-2. Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-paste-these-to-your-bot)**.
-3. Copy each prompt and send it to your bot in Telegram. The agent schedules the check-in and confirms.
+2. Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows)**.
+3. For each free workflow below, open its file in this repo, copy the **System Prompt** block (the grey box under the `## System Prompt` heading), paste it to your bot, and add the scheduling instruction from SETUP.md.
 4. Check it landed: send `/checkin` or ask "list my scheduled check-ins".
 
 > **Why no file copying?** The workflow files in this repo show you exactly what each check-in contains, so you can read and customize them. But installation happens through the conversation — your agent sets up its own schedule from the prompts. Works identically on Linux, Mac, Windows, and VPS.
