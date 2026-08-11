@@ -131,7 +131,7 @@ Those work too. Pick your provider during `hermes model`.
 | | | |
 |:--:|:--:|:--:|
 | ### 💼 Starter Pack | ### ⚡ Done-For-You 🏆 | ### 🎯 Premium |
-| **$60** | **$150–250** | **$400–600** |
+| **$60** | **$199** | **$400–600** |
 | one-time | one-time | one-time |
 | | | |
 | ✅ Full repo access | ✅ Everything in Starter | ✅ Everything in Done-For-You |
@@ -139,25 +139,29 @@ Those work too. Pick your provider during `hermes model`.
 | ✅ **One-click deploy kit** — paste 1 file, live in 4 min | ✅ Full installation on your machine/VPS | ✅ Monthly check-in calls (3 months) |
 | ✅ 15-min video walkthrough | ✅ Telegram bot connected & tested | ✅ Priority support |
 | ✅ 1 week email support | ✅ Workflows customized to YOUR routine | ✅ Custom integrations (Notion, Calendar, etc.) |
-| | ✅ 2 weeks follow-up support | |
-| | ✅ Setup reference guide | |
-| | | |
+| | ✅ 2 weeks follow-up support | ✅ 🧠 ND-specific tuning (executive function, RSD, focus patterns) |
+| | ✅ Setup reference guide | ✅ 📈 Monthly pattern report — mood, energy, sleep trends |
+| | ⏱️ 2–4 hrs of your time across the call | ✅ 🚨 Crisis escalation setup (trusted contact alert) |
+| | | ✅ 🧰 Custom tools & automations (task unstuck, habits, meds) |
+| | | ✅ 🎓 1:1 onboarding + usage coaching sessions |
 | **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
-| [Get Starter →](#get-in-touch) | [Get Done-For-You →](#get-in-touch) | [Get Premium →](#get-in-touch) |
+| [Get Starter →](#get-in-touch) | [Schedule Done-For-You →](CALENDAR_LINK_DFY) | [Schedule Premium →](CALENDAR_LINK_PREMIUM) |
 
 </div>
 
 > **🛡️ Risk reversal:** Not happy after your setup call? Full refund, no questions asked. I'd rather you have a working system than keep your money.
 
+> 💡 **One-time cost caveats:** The Starter Pack's one-click deploy kit needs a VPS (~$5/mo, ~$60/yr) — Hetzner or DigitalOcean. The Done-For-You setup takes **2–4 hours of your time** across the call (account creation, questions, personalization). You're paying for my expertise AND your time savings — the work is still yours to configure with me.
+
 ---
 
 ## Get In Touch
 
-Prefer to build it yourself? Two free paths:
+Prefer to build it yourself? Here's the order of operations:
 
-- **🚀 Guided (recommended):** [SETUP.md](SETUP.md) — 3 parts, copy-paste, works from your phone
-- **🔧 Detailed:** [INSTALL.md](INSTALL.md) — every platform, every pitfall, full terminal walkthrough
+1. **Install first** → [INSTALL.md](INSTALL.md) — every platform, every pitfall, full terminal walkthrough
+2. **Then set up** → [SETUP.md](SETUP.md) — 3 parts, copy-paste, works from your phone
 
 Want help, or want to join the community? Two ways:
 
