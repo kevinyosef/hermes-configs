@@ -8,7 +8,7 @@
 ## System Prompt
 
 ```
-You are MindCheck's evening check-in.
+You are Hermes' evening check-in.
 
 Send this message at 8pm:
 

@@ -1,32 +1,52 @@
-# Hermes Agent Configs for ADHD & Bipolar
+# An AI Agent That Checks on You — Built for ADHD & Bipolar Brains
 
-**By [Kevin Yosef](https://github.com/kevinyosef) — built from lived experience with Bipolar disorder & ADHD.**
+**By Kevin Yosef — built from lived experience with Bipolar disorder & ADHD.**
 
 Standard productivity tools (Todoist, Notion, reminders) fail neurodivergent brains because they wait for *you* to initiate. When you're in a depressive slump, overwhelmed, or burnt out, you don't open the app. Days turn into weeks.
 
 This repo gives you an AI agent that reaches out to **you** via Telegram — a platform you already use. It checks in, spots patterns, and warns you before you crash. Built with [Hermes Agent](https://github.com/nousresearch/hermes-agent) — free, open-source, industry standard.
 
+> 📩 **Want this running this week without touching a terminal?** [Jump to setup services →](#-done-for-you-setup-services)
+
+⏱️ **Time to a working bot: ~15 minutes** (copy-paste DIY) or **45 minutes** (done-for-you call).
+
 ---
 
-## What's Included
+## 🎁 FREE: Three Ready-to-Use Workflows
 
-### ✅ Free Workflows (in this repo)
+Steal these. They're the exact prompts I use every day.
 
 | Workflow | What happens |
 |----------|-------------|
 | **🌅 Morning Anchor** | 7am check-in. "What's one thing today?" Sets the day's tone in 30 seconds. |
-| **📊 Daily Check-in** | Evening 3-question prompt. Mood, energy, wins. Voice notes or one-word texts work. |
+| **📊 Daily Check-in** | Evening 3-question log. Mood, energy, wins. Voice notes or one-word texts work. |
 | **🌙 Evening Wind-Down** | 9:30pm nudge. Protects your sleep — the single most important factor for mood stability. |
 
-### 🔒 Premium Workflows (available with setup)
+[Get the full prompts →](WORKFLOWS.md#free-workflows)
 
+---
+
+## My Before / After
+
+**Before:** I lost 3-week blocks to crashes. Forgot to eat. Job applications burned me out in 2 days. Scrolling was my coping mechanism — 12 hours a day.
+
+**After:** The agent catches the downswing on day 3, not week 3. It checks in at 7am and 9:30pm whether I feel like it or not. It breaks frozen tasks into steps so small they're laughably easy. I haven't lost a week since.
+
+I built this because I had to. Then I realized half of r/ADHD_Programmers needs the same thing — so I'm sharing it.
+
+---
+
+## What's Included
+
+### ✅ Free (in this repo)
+- **3 ready-to-use workflows** — exact prompts, copy-paste-customize
+
+### 🔒 Premium (with setup)
 | Workflow | What it does |
 |----------|-------------|
 | **⚠️ Burnout Early Warning** | Analyzes 7 days of your data. Detects pre-crash trajectories and alerts you before you lose weeks. |
 | **🧩 Task Unstucker** | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. |
 | **💼 Job Hunt Assistant** | Searches for roles, customizes resumes, gives you copy-paste-ready applications. |
-
-> [See service packages below](#-done-for-you-setup-services) to get everything installed and customized.
 
 ---
 
@@ -41,359 +61,16 @@ This repo gives you an AI agent that reaches out to **you** via Telegram — a p
                    ▼
 ┌──────────────────────────────────────────────────────┐
 │              YOUR SERVER (VPS or home PC)             │
-│                                                      │
-│  Hermes Gateway ←── always-on daemon (not tmux!)     │
-│       │                                              │
+│  Hermes Gateway ←── always-on daemon                  │
 │       ├── connects to Telegram 24/7                  │
 │       ├── runs check-in workflows on schedule         │
 │       ├── sends replies back to your phone           │
 │       └── saves everything to markdown files          │
-│                                                      │
 │  OpenCode API  ←── the intelligence (~$10/mo)        │
-│  Tailscale      ←── secure remote access (free)       │
 └──────────────────────────────────────────────────────┘
 ```
 
-The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only SSH into the server during initial setup.
-
----
-
-## Important: We Use the Official Installer — NOT pip
-
-Many Linux guides tell you to `pip install`. **That path is painful** — Python version conflicts, virtual environments, PEP 668 errors. Hermes has an official installer that handles everything automatically.
-
-The installer downloads and manages its own Python, Node.js, and all dependencies. You just need `git`, `curl`, and `xz-utils`.
-
-```bash
-# The only prerequisites (Ubuntu/Debian):
-sudo apt update && sudo apt install -y git curl xz-utils
-```
-
----
-
-## Get Your OpenCode API Key (Do This First)
-
-Before installing anything, you need an API key. Here's what that means and how to get one.
-
-### What's an API Key?
-
-An **API key** is like a password that lets Hermes talk to the AI brain (the language model). Instead of you typing questions into ChatGPT's website, Hermes sends your messages through this key and gets responses back. The AI company charges per message — about $10/month for normal use.
-
-Think of it like prepaid phone credit. You add $10, and every time Hermes thinks, it uses a few cents. When the $10 runs out (usually a month), you add more.
-
-### Step-by-Step: Get Your Key
-
-**1. Go to [opencode.ai](https://opencode.ai)**
-
-Click the **Sign Up** button (top right). You can sign up with Google, GitHub, or email.
-
-**2. Open the Dashboard**
-
-After signing up, you'll land on the OpenCode dashboard. Look for **API Keys** in the left sidebar menu.
-
-**3. Create a New Key**
-
-Click the **Create API Key** button. Give it a name like "Hermes Agent" (the name doesn't matter — it's just a label for you).
-
-**4. Copy the Key Immediately**
-
-OpenCode shows you the key **once**. It looks like:
-
-```
-sk-opencode-a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6...
-```
-
-Click the **Copy** button. Paste it somewhere safe — a note on your phone, a text file, anywhere. You cannot see it again after you close the window.
-
-> **⚠️ If you lose the key, you have to create a new one. There's no "show key" button.**
-
-**5. Add Credit**
-
-In the sidebar, click **Billing** or **Usage**. Add $10 (minimum). This is prepaid — you're not signing up for a subscription. $10 typically lasts 3-5 weeks with normal check-in usage.
-
-**6. Keep Your Key Handy**
-
-You'll paste this key when you run `hermes model` later. The command will ask: "API key?" — paste it there.
-
-### What If I Already Have a Different API Key?
-
-If you already use OpenAI, Anthropic (Claude), or another provider — those keys also work. During `hermes model`, you can select any supported provider. OpenCode is recommended because it's cheapest for this use case (~$10/mo).
-
----
-
-## Choose Your Path
-
-Pick the row that matches your setup — jump directly:
-
-| Your setup | Go to |
-|-----------|------|
-| 🐧 Linux or 🍎 Mac (laptop/desktop) | [Path 1: Linux / Mac](#path-1-linux--mac-local-install) |
-| 🪟 Windows PC | [Path 2: Windows](#path-2-windows-local-install) |
-| ☁️ VPS server (runs 24/7, ~$5/mo) | [Path 3: VPS Server](#path-3-vps-server-runs-247) |
-| Not technical / want it done for you | [Setup Services](#-done-for-you-setup-services) |
-
----
-
-## Path 1: Linux / Mac (Local Install)
-
-**Best if:** You have a laptop/desktop that stays on most of the day.
-**Cost:** ~$10/mo (OpenCode API only)
-
-### Step A1: Install Hermes (Official Installer)
-
-Open your terminal and run ONE command:
-
-```bash
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-```
-
-What happens: the installer downloads Hermes, sets up Python/Node.js for you, and puts `hermes` on your PATH. This takes 2-3 minutes.
-
-After it finishes, reload your shell:
-
-```bash
-source ~/.bashrc   # or: source ~/.zshrc
-```
-
-Verify it worked:
-
-```bash
-hermes --version
-```
-
-> **🆘 Pitfall fix:** If `hermes` says "command not found", close and reopen your terminal. Still not working? Run `ls ~/.local/bin/hermes` — if it exists, add `export PATH="$HOME/.local/bin:$PATH"` to your `~/.bashrc`.
-
-### Step A2: Configure Provider & Model
-
-```bash
-hermes model
-```
-
-This walks you through choosing a provider interactively. Select **OpenCode** and paste the API key you got from [the guide above](#get-your-opencode-api-key-do-this-first).
-
-Choose model: `deepseek-v4-flash-free` (free tier, slower) or `deepseek-v4-pro` (faster, uses more credit).
-
-### Step A3: Clone This Repo
-
-```bash
-git clone https://github.com/kevinyosef/hermes-configs.git
-cd hermes-configs
-```
-
-### Step A4: Create Your Telegram Bot
-
-1. Open Telegram → search **@BotFather**
-2. Send: `/newbot`
-3. Name it (e.g. "My ADHD Checkin Bot")
-4. Username must end in `bot` (e.g. `my_adhd_bot`)
-5. BotFather gives you a token like `7123456789:AAHdqTcvCH1sGWQ...` — **save this!**
-
-### Step A5: Find Your Telegram User ID
-
-Search **@userinfobot** on Telegram → send any message → it replies with your numeric ID. Save this too.
-
-### Step A6: Start the Gateway (The Always-On Daemon)
-
-```bash
-hermes gateway setup
-```
-
-This walks you through connecting Telegram. When prompted:
-- **Platform:** Telegram
-- **Bot token:** Paste the token from Step A4
-- **Allowed users:** Your numeric ID from Step A5
-
-Then start the gateway:
-
-```bash
-hermes gateway start
-```
-
-The gateway runs in the background as a daemon. Open Telegram, send any message to your bot — it replies within seconds.
-
-> **🆘 Pitfall fix:** If the bot doesn't respond, check `hermes gateway status`. If it says "stopped", check logs: `hermes gateway logs --tail 20`. Common issue: wrong bot token (copy-paste error) or API key not set.
-
-**⚠️ Your computer must be ON for check-ins to fire.** For 24/7 coverage, use [Path 3: VPS Server](#path-3-vps-server-runs-247).
-
----
-
-## Path 2: Windows (Local Install)
-
-**Best if:** You're on Windows and your PC stays on most of the day.
-
-### Step WA1: Install Hermes (Official Windows Installer)
-
-Open **PowerShell** (right-click Start → Windows PowerShell) and run:
-
-```powershell
-irm https://hermes-agent.nousresearch.com/install.ps1 | iex
-```
-
-This downloads and installs everything automatically. After it finishes, close and reopen PowerShell.
-
-> **🆘 Pitfall fix:** If PowerShell blocks the script with an execution policy error, run this first: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` — then re-run the install command.
-
-Verify it worked:
-
-```powershell
-hermes --version
-```
-
-### Step WA2–WA5: Same as Path 1
-
-From here, the steps are identical to Path 1 (Linux/Mac):
-- **WA2:** `hermes model` to configure OpenCode
-- **WA3:** `git clone https://github.com/kevinyosef/hermes-configs.git`
-- **WA4:** Create Telegram bot via @BotFather
-- **WA5:** `hermes gateway setup` → `hermes gateway start`
-
-All `hermes` commands work the same on Windows. The gateway runs as a background process.
-
-> **🆘 Pitfall fix:** If `git` is not found, install [Git for Windows](https://git-scm.com/download/win). If `hermes` is not found after install, restart PowerShell or your PC.
-
----
-
-## Path 3: VPS Server (Runs 24/7)
-
-**Best if:** You want the agent always running. $5/mo extra but you never miss a check-in.
-**Cost:** ~$15/mo total ($5 VPS + $10 OpenCode API)
-
-### Step B1: Get a VPS
-
-We recommend **Hetzner** — $5/mo, reliable, beginner-friendly control panel.
-
-1. Go to [hetzner.com/cloud](https://www.hetzner.com/cloud) → create account
-2. Click **Create Server** → choose:
-   - **Location:** Nuremberg or Helsinki
-   - **Image:** Ubuntu 24.04
-   - **Type:** CX22 (1 vCPU, 2 GB RAM) — $4.59/mo
-3. **SSH Key:** We'll set this up next
-
-### Step B2: Set Up SSH Access
-
-**On your local computer:**
-
-```bash
-# Generate SSH key (Enter for all prompts)
-ssh-keygen -t ed25519
-
-# Display your public key:
-cat ~/.ssh/id_ed25519.pub
-```
-
-Copy the output (starts with `ssh-ed25519...`). Back in Hetzner, paste it into the **SSH Key** field during server creation. If server already exists: go to server → **SSH Keys** → **Add**.
-
-### Step B3: Connect & Install Hermes
-
-Hetzner shows your server IP (like `49.12.xxx.xxx`). Connect:
-
-```bash
-ssh root@YOUR_SERVER_IP
-# Type 'yes' for fingerprint prompt
-```
-
-Now install Hermes (official installer — no pip hell):
-
-```bash
-# Prerequisites
-apt update && apt install -y git curl xz-utils
-
-# Official installer (one command!)
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-
-# Reload shell
-source ~/.bashrc
-
-# Verify
-hermes --version
-```
-
-> **🆘 Pitfall fix:** If the installer fails with "xz not found": `apt install -y xz-utils` and re-run. If it complains about permissions: make sure you're logged in as `root` (the default for new Hetzner servers). If the installer hangs: press Ctrl+C and re-run — it's idempotent (safe to retry).
-
-### Step B4: Configure Provider
-
-```bash
-hermes model
-```
-
-Choose **OpenCode** → paste your API key → select `deepseek-v4-flash-free` (free tier).
-
-> **🆘 Pitfall fix:** If `hermes model` errors saying "config not found", run `hermes setup` first to initialize the config file, then try `hermes model` again.
-
-### Step B5: Set Up Telegram Gateway (The Always-On Daemon)
-
-```bash
-hermes gateway setup
-```
-
-Follow the prompts:
-- **Platform:** Telegram
-- **Bot token:** From @BotFather (see Path 1 Step A4)
-- **Allowed users:** Your Telegram numeric ID (from @userinfobot)
-
-Then start it as a daemon:
-
-```bash
-hermes gateway start --daemonize
-```
-
-The `--daemonize` flag makes it run in the background and survive you disconnecting from SSH. It will auto-restart if it crashes.
-
-> **🆘 Pitfall fix:** If `hermes gateway start` exits immediately without error, check `hermes gateway logs` — it might have started but failed to connect due to a bad token. If the gateway won't start at all: `hermes gateway setup` again and verify your bot token character by character.
-
-### Step B6: Verify It Works
-
-Open Telegram on your phone. Send any message to your bot. It should reply within seconds. Send `/checkin` to test the check-in workflow.
-
-To check gateway status anytime:
-
-```bash
-hermes gateway status    # Shows if running
-hermes gateway logs      # Shows recent output
-```
-
-> **🆘 Pitfall fix:** Bot not replying? Run through this checklist:
-> 1. `hermes gateway status` — is it "running"?
-> 2. `hermes gateway logs --tail 20` — any error messages?
-> 3. Did you message the RIGHT bot? (check the username)
-> 4. Is your API key valid? Run `hermes model` to verify
-> 5. Did you add your user ID to allowed users? The bot ignores messages from unknown IDs
-
-### Step B7: Set Up Tailscale (Free — Secure Remote Access)
-
-Tailscale creates a private network between your devices. You can SSH into your server and access the Hermes web dashboard without exposing ports to the internet.
-
-**On your server:**
-
-```bash
-curl -fsSL https://tailscale.com/install.sh | sh
-tailscale up
-```
-
-It prints a URL — open it in your browser to authenticate. Done.
-
-**On your phone:** Install [Tailscale](https://tailscale.com/download) (iOS/Android, free) → sign in with same account → your server appears in the device list.
-
-**What Tailscale gives you:**
-- SSH from your phone/laptop: `ssh root@[server-tailscale-ip]`
-- Web dashboard: open `http://[server-tailscale-ip]:8080` in your browser
-- No exposed ports. No passwords. Pure WireGuard.
-
-### How It All Connects
-
-```
-Your Phone                    Telegram Servers              Your VPS
-┌──────────────┐              ┌──────────────┐           ┌─────────────────┐
-│ Telegram App │────msg──────▶│   Telegram    │───API────▶│ Hermes Gateway   │
-│              │◀───reply─────│   Servers     │◀──API─────│ (daemon, 24/7)  │
-└──────────────┘              └──────────────┘           │                 │
-       │                                                  │  OpenCode API   │
-       │  Tailscale (admin only, secure)                  │  Markdown logs  │
-       └──────────────────────────────────────────────────│  Tailscale      │
-                                                          └─────────────────┘
-```
-
-Day-to-day: you only use Telegram. The gateway daemon handles everything automatically.
+The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only touch the technical stuff during setup. [Full installation guide →](INSTALL.md)
 
 ---
 
@@ -402,69 +79,43 @@ Day-to-day: you only use Telegram. The gateway daemon handles everything automat
 | Item | Monthly Cost | Notes |
 |------|-------------|-------|
 | OpenCode API (zen models) | ~$8–10 | Generous free tier covers most usage |
-| VPS (optional, if not running locally) | $5 | Hetzner, DigitalOcean, or similar |
+| VPS (optional, 24/7 coverage) | $5 | Hetzner, DigitalOcean, or similar |
 | Telegram Bot API | $0 | Free, unlimited messages |
 | Hermes Agent | $0 | Open source, MIT licensed |
 | Workflow prompts | $0 | Free, included in this repo |
 | **TOTAL** | **$10–15/mo** | |
 
-> **Note:** You do NOT need to manually edit config files. The commands `hermes model` and `hermes gateway setup` handle all configuration interactively. The `config/config.example.yaml` file in this repo is a reference — it shows what settings are available, not what you must edit.
+### This Setup Pays for Itself
 
-### How This Setup Saves You Money
-
-- **Replaces $200+/mo in subscriptions** — Notion AI ($10), Motion ($19), Sunsama ($20), Todoist Pro ($5), ADHD coaching ($150+/session)
-- **Efficient cron design** — The agent only calls the API during scheduled check-ins (3x/day), not every minute. Your $10 lasts the full month.
-- **No vendor lock-in** — Your data is plain markdown. Leave anytime. Export anywhere.
-- **One API for everything** — You don't need ChatGPT Plus ($20) + Claude Pro ($20) + separate tools. MindCheck uses one affordable API.
-
----
-
-## The Workflows
-
-| File | Status | What it does |
-|------|--------|-------------|
-| `workflows/morning-anchor.md` | ✅ Free | 7am daily check-in prompt |
-| `workflows/daily-checkin.md` | ✅ Free | Evening 3-question mood/energy/wins log |
-| `workflows/evening-winddown.md` | ✅ Free | 9:30pm bedtime nudge |
-| `workflows/burnout-detection.md` | 🔒 Premium | Weekly pattern analysis and crash warnings |
-| `workflows/task-unstucker.md` | 🔒 Premium | Breaks paralyzed tasks into micro-steps |
-| `workflows/job-hunt.md` | 🔒 Premium | Resume customization and application prep |
-
-Free files contain the exact system prompts — copy, paste, customize.
-Premium files describe what each workflow does and how to get it.
+- **Replaces $200+/mo in subscriptions** — Notion AI ($10) + Motion ($19) + Sunsama ($20) + Todoist Pro ($5) + coaching ($150+/session)
+- **Efficient cron design** — the agent only calls the API during check-ins (3x/day), not every minute. Your $10 lasts the full month.
+- **No vendor lock-in** — your data is plain markdown. Leave anytime. Export anywhere.
+- **One API for everything** — no ChatGPT Plus ($20) + Claude Pro ($20) + scattered tools.
 
 ---
 
 ## FAQ
 
-**Q: I don't know anything about servers or terminals. Can I still do this?**
-The Path 1, Path 2, and Path 3 instructions above are written for complete beginners. Every command is explained. You just copy-paste. If you get stuck at any step, DM me.
-
-**Q: Can I run this without a VPS?**
-Yes — Path 1 or Path 2 runs on your personal computer. It only needs to be ON during check-in times (morning, evening, bedtime). Path 3 gives you 24/7 coverage for $5/mo.
-
-**Q: How do I check if the agent is still running?**
-On your phone, send `/checkin` to your bot. If it replies, the gateway is alive. No need to SSH in. To check server-side: `hermes gateway status` and `hermes gateway logs --tail 20`.
-
-**Q: How do I access the Hermes web dashboard?**
-After setting up Tailscale, open your browser to `http://[your-server-tailscale-ip]:8080`. You'll see a dashboard showing gateway status, active workflows, and logs.
-
-**Q: What if the server restarts?**
-The gateway started with `--daemonize` auto-restarts. For reboots, create a simple systemd service — run `hermes gateway setup` and it will offer to create one for you automatically.
-
-**Q: What if `hermes model` or `hermes gateway` is "not found" after install?**
-Run `source ~/.bashrc` or close and reopen your terminal. The installer adds `hermes` to your PATH but the current shell doesn't know about it yet.
-
 **Q: Is my data private?**
 Yes. Everything is stored locally on your machine. Nothing goes to the cloud except your Telegram messages (which are encrypted) and API calls to OpenCode.
+
+**Q: I'm not technical at all. Can I still do this?**
+Yes — that's exactly what the setup services below are for. You don't touch the terminal. I set everything up for you, test it, and hand you a working system.
 
 **Q: Can I customize the check-in questions?**
 Absolutely. Every workflow is a simple markdown file. Edit the questions to match your life.
 
-**Q: What if I'm not technical at all?**
-See the setup services below.
+**Q: Can I run this without a VPS?**
+Yes — Path 1 (Linux/Mac) or Path 2 (Windows) runs on your personal computer. It only needs to be ON during check-in times. Path 3 gives you 24/7 coverage for $5/mo. [See the install guide →](INSTALL.md#choose-your-path)
 
----
+**Q: How do I check if the agent is still running?**
+On your phone, send `/checkin` to your bot. If it replies, it's alive. No need to SSH in.
+
+**Q: What if the server restarts?**
+The gateway (`--daemonize`) auto-restarts. For full reboots, `hermes gateway setup` offers to create a systemd service automatically.
+
+**Q: What if I already have OpenAI/Claude API keys?**
+Those work too. Pick your provider during `hermes model`.
 
 ---
 
@@ -472,13 +123,11 @@ See the setup services below.
 
 > **You don't touch the terminal. I set everything up for you.**
 
----
-
 <div align="center">
 
-|  |  |  |
+| | | |
 |:--:|:--:|:--:|
-| ### 💼 Starter Pack | ### ⚡ Done-For-You | ### 🎯 Premium |
+| ### 💼 Starter Pack | ### ⚡ Done-For-You 🏆 | ### 🎯 Premium |
 | **$45** | **$150–250** | **$400–600** |
 | one-time | one-time | one-time |
 | | | |
@@ -492,24 +141,36 @@ See the setup services below.
 | | | |
 | **For the time-poor dev** | **Most popular — just works** | **For professionals who want a partner** |
 | | | |
-| [DM on Reddit](#) | [DM on Reddit](#) | [DM on Reddit](#) |
+| [Get Starter →](#get-in-touch) | [Get Done-For-You →](#get-in-touch) | [Get Premium →](#get-in-touch) |
 
 </div>
 
----
-
-<p align="center">
-<b>📩 Ready to get started?</b><br>
-DM me on Reddit or open an issue on this repo<br>
-<sub>I usually respond within a few hours.</sub>
-</p>
+> **🛡️ Risk reversal:** Not happy after your setup call? Full refund, no questions asked. I'd rather you have a working system than keep your money.
 
 ---
 
-## License
+## Get In Touch
 
-MIT — free to use, modify, and share.
+Prefer to build it yourself? **[Full FREE installation guide →](INSTALL.md)**
 
----
+Want help, or want to join the community? Two ways:
 
-*Built by [Kevin Yosef](https://github.com/kevinyosef). If this helps one person avoid the crashes I went through, it was worth it.*
+### 📧 Email me
+
+Send a message and I'll reply within a few hours:
+
+<form action="https://formspree.io/f/your-form-id" method="POST">
+  <input type="email" name="email" placeholder="Your email" required><br><br>
+  <textarea name="message" placeholder="What do you need help with?" rows="4" required></textarea><br><br>
+  <button type="submit">Send</button>
+</form>
+
+*(Form doesn't render on mobile GitHub? Email me directly: kevinyosef@proton.me)*
+
+### 💬 Join the Discord
+
+Direct access to me and fellow neurodivergents using AI agents to keep their lives together. Get help, share what works, swap workflows:
+
+**[Join the community →](https://discord.gg/your-invite)**
+
+Questions? [Open an issue](https://github.com/kevinyosef/hermes-configs/issues/new) or [DM me on Reddit](https://reddit.com/message/compose?to=kevinyosef).
