@@ -30,6 +30,6 @@ Included in all paid packages:
 |---------|----------|
 | **Starter Pack ($45)** | Full prompt + trigger config |
 | **Done-For-You ($150–250)** | Installed, configured, and tested |
-| **Premium ($400–600)** | Custom role targeting + ongoing search tuning |
+| **Premium ($599)** | Custom role targeting + ongoing search tuning |
 
 [DM me on Reddit](https://reddit.com) or open an issue on this repo.

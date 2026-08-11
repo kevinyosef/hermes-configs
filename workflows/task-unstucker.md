@@ -32,6 +32,6 @@ Included in all paid packages:
 |---------|----------|
 | **Starter Pack ($45)** | Full prompt + trigger config |
 | **Done-For-You ($150–250)** | Installed and tested on your Telegram |
-| **Premium ($400–600)** | Scoped to your specific recurring stuck points |
+| **Premium ($599)** | Scoped to your specific recurring stuck points |
 
 [DM me on Reddit](https://reddit.com) or open an issue on this repo.

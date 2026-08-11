@@ -131,7 +131,7 @@ Those work too. Pick your provider during `hermes model`.
 | | | |
 |:--:|:--:|:--:|
 | ### 💼 Starter Pack | ### ⚡ Done-For-You 🏆 | ### 🎯 Premium |
-| **$60** | **$199** | **$400–600** |
+| **$60** | **$199** | **$599** |
 | one-time | one-time | one-time |
 | | | |
 | ✅ Full repo access | ✅ Everything in Starter | ✅ Everything in Done-For-You |
