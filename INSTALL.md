@@ -10,9 +10,9 @@ Full setup instructions for all platforms. **Do these steps after reading the [R
 
 Your agent needs a "brain" — a model provider. Two ways:
 
-**🆓 Option 1 — Free (recommended to start):** run `hermes setup` and pick **Quick Setup (Nous Portal)**. Logs you in with Google/GitHub, includes 300+ models, no API key needed. $0.
+**Option 1 — Free (recommended to start):** run `hermes setup` and pick **Quick Setup (Nous Portal)**. Logs you in with Google/GitHub, includes 300+ models, no API key needed. $0.
 
-**💳 Option 2 — OpenCode (~$10/mo):** an API key gives you pay-per-use access. An **API key** is like a password that lets Hermes talk to the AI brain; the company charges per message. Here's how to get one:
+**Option 2 — OpenCode (~$10/mo):** an API key gives you pay-per-use access. An **API key** is like a password that lets Hermes talk to the AI brain; the company charges per message. Here's how to get one:
 
 1. Go to [opencode.ai](https://opencode.ai) → click **Sign Up** (top right). Google, GitHub, or email all work.
 2. Open the dashboard → look for **API Keys** in the left sidebar.
@@ -69,7 +69,7 @@ Verify:
 hermes --version
 ```
 
-> **🆘 Fix:** "command not found" → close/reopen terminal. Still stuck? `ls ~/.local/bin/hermes` — if it exists, add `export PATH="$HOME/.local/bin:$PATH"` to `~/.bashrc`.
+> **Fix:** "command not found" → close/reopen terminal. Still stuck? `ls ~/.local/bin/hermes` — if it exists, add `export PATH="$HOME/.local/bin:$PATH"` to `~/.bashrc`.
 
 ### Step A2: Configure Provider & Model
 
@@ -108,7 +108,7 @@ hermes gateway start
 
 Open Telegram → send any message to your bot → it replies within seconds.
 
-> **🆘 Fix:** Bot not responding? `hermes gateway status`, then `hermes gateway logs --tail 20`. Most common: wrong bot token or API key not set.
+> **Fix:** Bot not responding? `hermes gateway status`, then `hermes gateway logs --tail 20`. Most common: wrong bot token or API key not set.
 
 ### Step A6: Install the Workflows (No Cloning Needed)
 
@@ -116,7 +116,7 @@ You don't need to clone this repo or copy any files. The workflows install thems
 
 Open **[SETUP.md → Part 3: The Setup Prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows)** and send each prompt to your bot in Telegram. The bot confirms when each check-in is scheduled.
 
-> 💡 The prompts live in this repo for reference and customization, but cloning is optional — you can read them right here on GitHub, or in `WORKFLOWS.md`.
+> The prompts live in this repo for reference and customization, but cloning is optional — you can read them right here on GitHub, or in `WORKFLOWS.md`.
 
 For 24/7 coverage, use [Path 3](#path-3-vps-server-runs-247).
 
@@ -136,7 +136,7 @@ irm https://hermes-agent.nousresearch.com/install.ps1 | iex
 
 Close and reopen PowerShell after it finishes.
 
-> **🆘 Fix:** If PowerShell blocks the script: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` → re-run the install.
+> **Fix:** If PowerShell blocks the script: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` → re-run the install.
 
 Verify:
 
@@ -152,7 +152,7 @@ From here, the steps are identical to Path 1 (Linux/Mac):
 - **WA5:** `hermes gateway setup` → `hermes gateway start`
 - **WA6:** Install the workflows by pasting the [setup prompts](SETUP.md#part-3--the-setup-prompts-copy-the-full-workflows) to your bot
 
-> **🆘 Fix:** `git` not found → install [Git for Windows](https://git-scm.com/download/win). `hermes` not found → restart PowerShell or your PC. (Note: git is only needed if you want to clone the repo — the setup prompts work without cloning.)
+> **Fix:** `git` not found → install [Git for Windows](https://git-scm.com/download/win). `hermes` not found → restart PowerShell or your PC. (Note: git is only needed if you want to clone the repo — the setup prompts work without cloning.)
 
 ---
 
@@ -191,7 +191,7 @@ source ~/.bashrc
 hermes --version
 ```
 
-> **🆘 Fix:** "xz not found" → `apt install -y xz-utils` and re-run. Installer hangs → Ctrl+C and re-run (safe to retry).
+> **Fix:** "xz not found" → `apt install -y xz-utils` and re-run. Installer hangs → Ctrl+C and re-run (safe to retry).
 
 ### Step B4: Configure Provider
 
@@ -201,7 +201,7 @@ hermes model
 
 Select your provider — **Nous Portal** (free) or **OpenCode** (paste your API key) — then pick `deepseek-v4-flash-free` (free tier).
 
-> **🆘 Fix:** "config not found" error → run `hermes setup` first, then `hermes model` again.
+> **Fix:** "config not found" error → run `hermes setup` first, then `hermes model` again.
 
 ### Step B5: Set Up the Gateway (Daemon)
 
@@ -229,7 +229,7 @@ hermes gateway status    # Is it running?
 hermes gateway logs      # Recent output
 ```
 
-> **🆘 Bot not replying checklist:** 1) `hermes gateway status` — running? 2) `hermes gateway logs --tail 20` — errors? 3) Messaging the RIGHT bot? 4) API key valid? (`hermes model`) 5) User ID in allowed users? Unknown IDs are ignored.
+> **Bot not replying checklist:** 1) `hermes gateway status` — running? 2) `hermes gateway logs --tail 20` — errors? 3) Messaging the RIGHT bot? 4) API key valid? (`hermes model`) 5) User ID in allowed users? Unknown IDs are ignored.
 
 ### Step B7: Tailscale (Free — Secure Remote Access)
 

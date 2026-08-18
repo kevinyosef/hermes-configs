@@ -28,7 +28,7 @@ hermes setup
 hermes model
 ```
 
-> **🆘 Stuck?** If `hermes` says "command not found": close the terminal, open a NEW one, try again. If it still fails, see the FAQ in the main README.
+> **Stuck?** If `hermes` says "command not found": close the terminal, open a NEW one, try again. If it still fails, see the FAQ in the main README.
 
 ---
 
@@ -50,7 +50,7 @@ Then start it:
 hermes gateway start
 ```
 
-**Test it:** open Telegram, message your bot anything ("hello"). It replies within seconds. 🎉
+**Test it:** open Telegram, message your bot anything ("hello"). It replies within seconds.
 
 > If it doesn't reply, jump to the [Troubleshooting checklist](#troubleshooting) at the bottom.
 
@@ -87,9 +87,9 @@ The short prompts are nice, but the **full workflow prompts** in this repo are t
 
 **That's it. You now have an AI companion that checks on YOU — with the full personality and rules baked in — every day, on the app you already use.**
 
-> 💡 **Not on GitHub?** If you cloned the repo, the files are in the `workflows/` folder on your machine — open them in any text editor and copy from there.
+> **Not on GitHub?** If you cloned the repo, the files are in the `workflows/` folder on your machine — open them in any text editor and copy from there.
 
-> 💡 **Want changes?** Just tell the bot: "change my morning check-in to 9am" or "add a question about food." The agent updates it on the spot.
+> **Want changes?** Just tell the bot: "change my morning check-in to 9am" or "add a question about food." The agent updates it on the spot.
 
 ---
 

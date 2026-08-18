@@ -1,7 +1,7 @@
 # Hermes Agent Configuration — Reference
 # https://github.com/kevinyosef/hermes-configs
 #
-# ⚠️ YOU DO NOT NEED TO EDIT THIS FILE MANUALLY.
+# YOU DO NOT NEED TO EDIT THIS FILE MANUALLY.
 #
 # The recommended setup uses interactive commands:
 #   hermes model       → configures your LLM provider & API key

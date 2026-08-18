@@ -206,4 +206,4 @@ And remember: your setup package includes a **2-week follow-up support window** 
 
 ---
 
-That's the whole manual. You paid for a system that runs itself so you don't have to think about it — so go use the fun part: message your bot, answer today's check-in, and let it carry some of the weight. You've got this. 💙
+That's the whole manual. You paid for a system that runs itself so you don't have to think about it — so go use the fun part: message your bot, answer today's check-in, and let it carry some of the weight. You've got this.
