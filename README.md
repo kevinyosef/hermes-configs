@@ -2,15 +2,47 @@
 
 **By Kevin Yosef — built from lived experience with Bipolar disorder & ADHD.**
 
-Standard productivity tools (Todoist, Notion, reminders) fail neurodivergent brains because they wait for *you* to initiate. When you're in a depressive slump, overwhelmed, or burnt out, you don't open the app. Days turn into weeks.
+The apps we often use (Todoist, Notion, and even Reclaim and Motion) often get ignored in rough days and seasons and tasks keep accumulating and we leave them for a long time because the lists are daunting.
 
-This repo gives you an AI agent that reaches out to **you** via Telegram — a platform you already use. It checks in, spots patterns, and warns you before you crash. Built with [Hermes Agent](https://github.com/nousresearch/hermes-agent) — free, open-source, industry standard.
+From my last manic eposide which came after a short break after a long depressive patch, I decided I would build sth that helps me manage the chaos but also handles the bulk of the tasks.
 
-> 📩 **Want this running this week without touching a terminal?** [Jump to setup services →](#-done-for-you-setup-services)
+This reduces the tasks I have to do and for those that I need to do, the AI breaks them down into manageable chunks and pushes me to get them done. This helps me keep catch up to my goals and milestones.
 
-⏱️ **Time to a working bot: ~15 minutes** (copy-paste DIY) or **45 minutes** (done-for-you call).
+I went with the free AI agent - [Hermes Agent](https://github.com/nousresearch/hermes-agent) and this repository gives you the configurations that I use to make it work for people like me - Bipolar, ADHD, Depression and even poeple with chronic fatigue.
+
+It can text you on Telegram, Whatsapp, slack, etc and connect to your calendar, email, etc to get tasks done for you. Complete tasks from bed. You will mostly be reiewing and aproving agent task completion.
+
+I plan to write tutorial later on as well. You can bookmark this and then come back when you need to learn sth :)
+
+> Disclaimer: I am oposed to AI therapy and cannot thing of anything worse for you than consulting AI for any medical advice. This setup is to only help you keep your life in check - task initiation, task completion, addiction recovery, routine and habit adherance. You can change it at your own risk and also note, it is possible to acidentally get caried away in a chat regarding your health and I do not take accountability for that.
+
+
+## Benefits
+- IT checks in on you on a daily basis to know how you are doing, journal that and then if you need to, change the tasks you will be doing that day.
+- It watches your patterns and helps you course correct. For example, you smoke when you did not sleep well or exersise(I've been clean for 2 months after working on quiting for a long time. This agent helped). There are many more examples.
+- It works on your tasks and that reduces overwhelm. For tasks that only you can do, it breaks them down into manageable bits and if it discovers it can handle those bits, it does them as well. Fewer tasks = less overwhelm, better mood and reduces anxiety.
+- It keeps you accountable. We often skip our routines and habits even on good days. And one or two skips for even legitimate reasons make it hard to get back. With gentle nudges, it will remind you these things and why you decided to make them routines and habits as well
+- Adjusts to your day. Some days are harder than others, so we cannot do everything we said we were going to do. Unlike a calendar or task management app, it can tell you which ones are the most important.
+- Sleep management. Following the past two points, it keeps you accountable with your sleep schedule. You can miss workouts or home cooked meals but when you work or stay up late into the night, it will definitely affect you.
+
+⏱️ **Time to a working bot: ~2 hours** (copy-paste DIY) or **45 minutes** (done-for-you call).
+
+> 📩 **Want this running in 15 min?** [Jump to setup services →](#-done-for-you-setup-services)
+<!-- TODO: Change this to jump to the get the script we are selling. -->
 
 ---
+
+## Cost Breakdown — No Surprises
+
+| Item | Monthly Cost | Notes |
+|------|-------------|-------|
+| Model provider (The AI engine) | $0–10 | **Free:** Nous Portal (Quick Setup). **~$10:** OpenCode for pay-per-use |
+| Server | $5 | Hetzner, DigitalOcean, or similar |
+| Telegram Bot API | $0 | Free, unlimited messages |
+| Hermes Agent | $0 | Open source, MIT licensed |
+| Workflow prompts | $0 | Free, included in this repo |
+| **TOTAL** | **$0–15/mo** | Start free, upgrade if you want |
+
 
 ## 🎁 FREE: Three Ready-to-Use Workflows
 
@@ -22,32 +54,19 @@ Steal these. They're the exact prompts I use every day.
 | **📊 Daily Check-in** | Evening 3-question log. Mood, energy, wins. Voice notes or one-word texts work. |
 | **🌙 Evening Wind-Down** | 9:30pm nudge. Protects your sleep — the single most important factor for mood stability. |
 
-[Get the full prompts →](WORKFLOWS.md#free-workflows)
+[Get the here →](WORKFLOWS.md#free-workflows)
 
 ---
 
-## My Before / After
-
-**Before:** I lost 3-week blocks to crashes. Forgot to eat. Job applications burned me out in 2 days. Scrolling was my coping mechanism — 12 hours a day.
-
-**After:** The agent catches the downswing on day 3, not week 3. It checks in at 7am and 9:30pm whether I feel like it or not. It breaks frozen tasks into steps so small they're laughably easy. I haven't lost a week since.
-
-I built this because I had to. Then I realized half of r/ADHD_Programmers needs the same thing — so I'm sharing it.
-
----
-
-## What's Included
-
-### ✅ Free (in this repo)
-- **3 ready-to-use workflows** — exact prompts, copy-paste-customize
-
-### 🔒 Premium (with setup)
+### 🔒 Premium
 | Workflow | What it does |
 |----------|-------------|
 | **⚠️ Burnout Early Warning** | Analyzes 7 days of your data. Detects pre-crash trajectories and alerts you before you lose weeks. |
 | **🧩 Task Unstucker** | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. |
 | **💼 Job Hunt Assistant** | Searches for roles, customizes resumes, gives you copy-paste-ready applications. |
 
+[Get the here →](WORKFLOWS.md#free-workflows) or individually
+<!-- TODO: Make this link to the premium tiers section and a payment link to get them individually. Each $10-->
 ---
 
 ## How It Works — The Big Picture
@@ -72,30 +91,9 @@ I built this because I had to. Then I realized half of r/ADHD_Programmers needs 
 
 The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only touch the technical stuff during setup.
 
-**🚀 Quick start:** [SETUP.md — 15-minute guided walkthrough](SETUP.md) (works with your phone alone).
-**🔧 Detailed guide:** [INSTALL.md — all platforms & pitfalls](INSTALL.md).
+**🚀 Quick start:** [SETUP.md — free guided walkthrough](SETUP.md) (works with your phone alone).
+**🔧 Detailed guide:** [INSTALL.md — guided installation](INSTALL.md).
 
----
-
-## Cost Breakdown — No Surprises
-
-| Item | Monthly Cost | Notes |
-|------|-------------|-------|
-| Model provider | $0–10 | **Free:** Nous Portal (Quick Setup). **~$10:** OpenCode for pay-per-use |
-| VPS (optional, 24/7 coverage) | $5 | Hetzner, DigitalOcean, or similar |
-| Telegram Bot API | $0 | Free, unlimited messages |
-| Hermes Agent | $0 | Open source, MIT licensed |
-| Workflow prompts | $0 | Free, included in this repo |
-| **TOTAL** | **$0–15/mo** | Start free, upgrade if you want |
-
-### This Setup Pays for Itself
-
-- **Replaces $200+/mo in subscriptions** — Notion AI ($10) + Motion ($19) + Sunsama ($20) + Todoist Pro ($5) + coaching ($150+/session)
-- **Efficient cron design** — the agent only calls the API during check-ins (3x/day), not every minute. Even the paid tier stays under $10/mo.
-- **No vendor lock-in** — your data is plain markdown. Leave anytime. Export anywhere.
-- **One API for everything** — no ChatGPT Plus ($20) + Claude Pro ($20) + scattered tools.
-
----
 
 ## FAQ
 
@@ -126,7 +124,6 @@ Those work too. Pick your provider during `hermes model`.
 
 > **You don't touch the terminal. I set everything up for you.**
 
-<div align="center">
 
 | | | |
 |:--:|:--:|:--:|
@@ -148,7 +145,6 @@ Those work too. Pick your provider during `hermes model`.
 | | | |
 | [Get Starter →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) | [Get Done-For-You →](https://buy.polar.sh/polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn) | [Get Premium →](https://buy.polar.sh/polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn) |
 
-</div>
 
 > **🛡️ Risk reversal:** Not happy with your purchase? Full refund, no questions asked — just email **kevinyosef54@gmail.com**. I'd rather you have a working system than keep your money.
 
