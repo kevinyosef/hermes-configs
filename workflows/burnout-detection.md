@@ -27,8 +27,8 @@ Included in all paid packages:
 
 | Package | Includes |
 |---------|----------|
-| **Starter Pack ($45)** | Full system prompt + config — you install |
-| **Done-For-You ($150–250)** | Installed, configured, and tested on your Telegram |
+| **Starter Pack ($60)** | Full system prompt + config — you install |
+| **Done-For-You ($199)** | Installed, configured, and tested on your Telegram |
 | **Premium ($599)** | Custom thresholds + ongoing tuning for your specific patterns |
 
 [DM me on Reddit](https://reddit.com) or open an issue on this repo to get started.
