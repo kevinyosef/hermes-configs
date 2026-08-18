@@ -29,12 +29,12 @@ Every workflow is plain text. Change the questions, the time, the tone — anyth
 
 ## Premium Workflows
 
-These ship as part of the [Done-For-You Setup](README.md#-done-for-you-setup-services) (or individually via the Starter Pack). The files in `workflows/` are descriptions — the full prompts are delivered during setup so they're tuned to *your* life.
+These ship as part of the [Done-For-You Setup](README.md#-done-for-you-setup-services) and Premium tiers, or **individually for $10 each** below. The files in `workflows/` are descriptions — the full prompts are delivered after purchase so they're tuned to *your* life.
 
-| Workflow | File | What it does |
-|----------|------|-------------|
-| ⚠️ Burnout Early Warning | `workflows/burnout-detection.md` | Weekly analysis of your check-in data. Detects pre-crash trajectories and alerts you before you lose weeks. |
-| 🧩 Task Unstucker | `workflows/task-unstucker.md` | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. |
-| 💼 Job Hunt Assistant | `workflows/job-hunt.md` | Searches for roles, customizes resumes, gives you copy-paste-ready applications. |
+| Workflow | File | What it does | Buy |
+|----------|------|-------------|-----|
+| ⚠️ Burnout Early Warning | `workflows/burnout-detection.md` | Weekly analysis of your check-in data. Detects pre-crash trajectories and alerts you before you lose weeks. | [Buy →](https://buy.polar.sh/polar_cl_fQsiOfSsuBuUFl46ohBMzv6W30FboezCekbg108suvm) |
+| 🧩 Task Unstucker | `workflows/task-unstucker.md` | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. | [Buy →](https://buy.polar.sh/polar_cl_WbZiB9ySNdj8WzbyPT2dghyZKv7X161q1M1JT2RD46n) |
+| 💼 Job Hunt Assistant | `workflows/job-hunt.md` | Searches for roles, customizes resumes, gives you copy-paste-ready applications. | [Buy →](https://buy.polar.sh/polar_cl_vybMXFn5O9MM01f14c2SrVxNCwYthAonnPaKL3ho255) |
 
-[Get them →](README.md#-done-for-you-setup-services)
+[Get all three with Done-For-You →](README.md#-done-for-you-setup-services)

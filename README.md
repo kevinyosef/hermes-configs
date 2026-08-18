@@ -27,8 +27,7 @@ I plan to write tutorial later on as well. You can bookmark this and then come b
 
 ⏱️ **Time to a working bot: ~2 hours** (copy-paste DIY) or **45 minutes** (done-for-you call).
 
-> 📩 **Want this running in 15 min?** [Jump to setup services →](#-done-for-you-setup-services)
-<!-- TODO: Change this to jump to the get the script we are selling. -->
+> 📩 **Want this running in 15 min?** [Get the one-click deploy kit →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva)
 
 ---
 
@@ -65,8 +64,7 @@ Steal these. They're the exact prompts I use every day.
 | **🧩 Task Unstucker** | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. |
 | **💼 Job Hunt Assistant** | Searches for roles, customizes resumes, gives you copy-paste-ready applications. |
 
-[Get the here →](WORKFLOWS.md#free-workflows) or individually
-<!-- TODO: Make this link to the premium tiers section and a payment link to get them individually. Each $10-->
+[Get them individually →](WORKFLOWS.md#premium-workflows) — $10 each
 ---
 
 ## How It Works — The Big Picture

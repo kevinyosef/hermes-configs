@@ -13,6 +13,9 @@ Checkout links created 2026-08-11 via `POST /v1/checkout-links/` (Stripe). The `
 | 💼 Starter Pack | $60 one-time | `0b31afe3-7f38-4482-bf10-9aa735ef2c91` | `b4f99af7-e1d8-4300-832a-14547423943c` | `polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva` | https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva |
 | ⚡ Done-For-You | $199 one-time | `76798192-f86f-4723-99b1-30bb1b16b46a` | `85c2b008-73e8-40d6-8e37-45751803e500` | `polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn` | https://buy.polar.sh/polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn |
 | 🎯 Premium | $599 one-time (was $400 — old price `6463fcaf...` archived) | `d18b8cb1-6839-4229-a559-882766edb40e` | `2571ffbe-50bc-47d7-9d29-b87e40e69476` | `polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn` | https://buy.polar.sh/polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn |
+| ⚠️ Burnout Early Warning | $10 one-time | `5bf804be-73d4-4bc5-ac7b-b4a728e25a7a` | `f96a68ad-a3d6-4e87-903c-3bfc9d0ea0b3` | `polar_cl_fQsiOfSsuBuUFl46ohBMzv6W30FboezCekbg108suvm` | https://buy.polar.sh/polar_cl_fQsiOfSsuBuUFl46ohBMzv6W30FboezCekbg108suvm |
+| 🧩 Task Unstucker | $10 one-time | `ceef45d1-81a3-4266-95d0-801be9e2c34d` | `b3cb90a6-5f10-43bf-82a6-38af12068b9b` | `polar_cl_WbZiB9ySNdj8WzbyPT2dghyZKv7X161q1M1JT2RD46n` | https://buy.polar.sh/polar_cl_WbZiB9ySNdj8WzbyPT2dghyZKv7X161q1M1JT2RD46n |
+| 💼 Job Hunt Assistant | $10 one-time | `d129270c-9147-47f0-9325-cce1b38a8cf8` | `c997fde9-9919-4857-b537-ec024366b9cd` | `polar_cl_vybMXFn5O9MM01f14c2SrVxNCwYthAonnPaKL3ho255` | https://buy.polar.sh/polar_cl_vybMXFn5O9MM01f14c2SrVxNCwYthAonnPaKL3ho255 |
 
 ## API Notes (Cloudflare)
 
