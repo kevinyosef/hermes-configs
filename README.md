@@ -2,20 +2,19 @@
 
 **By Kevin Yosef — built from lived experience with Bipolar disorder & ADHD.**
 
-The apps we often use (Todoist, Notion, and even Reclaim and Motion) often get ignored in rough days and seasons and tasks keep accumulating and we leave them for a long time because the lists are daunting.
+The apps we use (Todoist, Notion, and even Reclaim and Motion) get often ignored on rough days, tasks keep accumulating and we leave them for a long time because the lists are daunting.
 
-From my last manic eposide which came after a short break after a long depressive patch, I decided I would build sth that helps me manage the chaos but also handles the bulk of the tasks.
+This is a free installation and setup guide for the free AI agent - [Hermes Agent](https://github.com/nousresearch/hermes-agent) and this repository gives you the configurations that I use to make it work for people like me - Bipolar, ADHD, Depression and even poeple with chronic fatigue.
 
-This reduces the tasks I have to do and for those that I need to do, the AI breaks them down into manageable chunks and pushes me to get them done. This helps me keep catch up to my goals and milestones.
+The setup configures it to help people with Bipolar, Depression, ADHD and Chronic Fatigue and even burnout complete tasks.
 
-I went with the free AI agent - [Hermes Agent](https://github.com/nousresearch/hermes-agent) and this repository gives you the configurations that I use to make it work for people like me - Bipolar, ADHD, Depression and even poeple with chronic fatigue.
+Started working on it shortly after going to hospital for mania and it has helped a ton. I'm now already doing interviews :) and the agent helped look for the jobs and customize my resumes (Things that would have burnt me out in 3 days and would have ended up postponing or doing lazily). Been getting freelance clients as well :)
 
-It can text you on Telegram, Whatsapp, slack, etc and connect to your calendar, email, etc to get tasks done for you. Complete tasks from bed. You will mostly be reiewing and aproving agent task completion.
+> Disclaimer: I am opposed to AI therapy and cannot thing of anything worse for you than consulting AI for any medical advice. This setup is to only help you keep your life in check - task initiation, task completion, addiction recovery, routine and habit adherance. You can change it at your own risk and also note, it is possible to acidentally get caried away in a chat regarding your health and I do not take accountability for that.
+
+You can access it through any messaging app; Telegram, Whatsapp, Slack, Email, IMessage, etc and connect to your calendar, email, etc to get tasks done for you. Complete tasks from bed. You will mostly be reiewing and aproving agent task completion.
 
 I plan to write tutorial later on as well. You can bookmark this and then come back when you need to learn sth :)
-
-> Disclaimer: I am oposed to AI therapy and cannot thing of anything worse for you than consulting AI for any medical advice. This setup is to only help you keep your life in check - task initiation, task completion, addiction recovery, routine and habit adherance. You can change it at your own risk and also note, it is possible to acidentally get caried away in a chat regarding your health and I do not take accountability for that.
-
 
 ## Benefits
 - IT checks in on you on a daily basis to know how you are doing, journal that and then if you need to, change the tasks you will be doing that day.
@@ -25,7 +24,8 @@ I plan to write tutorial later on as well. You can bookmark this and then come b
 - Adjusts to your day. Some days are harder than others, so we cannot do everything we said we were going to do. Unlike a calendar or task management app, it can tell you which ones are the most important.
 - Sleep management. Following the past two points, it keeps you accountable with your sleep schedule. You can miss workouts or home cooked meals but when you work or stay up late into the night, it will definitely affect you.
 
-⏱️ **Time to a working bot: ~2 hours** (copy-paste DIY) or **45 minutes** (done-for-you call).
+⏱️ **Time to a working bot: ~2 hours** (copy-paste DIY), 15 min [with this script](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) or get on a call for more complex setups.
+TODO: For the last CTA in the line above, add a link to the done for you section
 
 > 📩 **Want this running in 15 min?** [Get the one-click deploy kit →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva)
 
@@ -57,14 +57,15 @@ Steal these. They're the exact prompts I use every day.
 
 ---
 
-### 🔒 Premium
+### [🔒 Premium](WORKFLOWS.md#premium-workflows)
 | Workflow | What it does |
 |----------|-------------|
 | **⚠️ Burnout Early Warning** | Analyzes 7 days of your data. Detects pre-crash trajectories and alerts you before you lose weeks. |
 | **🧩 Task Unstucker** | Frozen on a task? Breaks it into 15-minute micro-steps so step 1 takes zero willpower. |
 | **💼 Job Hunt Assistant** | Searches for roles, customizes resumes, gives you copy-paste-ready applications. |
 
-[Get them individually →](WORKFLOWS.md#premium-workflows) — $10 each
+
+[Or get them individually →](WORKFLOWS.md#premium-workflows) — $10
 ---
 
 ## How It Works — The Big Picture
