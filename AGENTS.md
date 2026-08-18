@@ -1,5 +1,8 @@
 # AGENTS.md
 
+## Working style
+- Default to orchestrating sub-agents (in parallel where work is independent, then sequential where there are dependencies) to complete whole projects end to end — don't stop at a single step or ask for approval between every phase. The user's expectation is full completion of the entire plan in one pass.
+
 ## What this repo is
 Not application code — marketing docs + workflow prompts + a one-click deploy script for a paid product (a Hermes Agent Telegram check-in bot for ADHD/Bipolar). There is no build, test, or lint step; "verifying" changes means cross-checking the docs against each other (prices, filenames, checkout links).
 

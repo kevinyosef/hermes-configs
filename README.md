@@ -24,10 +24,9 @@ I plan to write tutorial later on as well. You can bookmark this and then come b
 - Adjusts to your day. Some days are harder than others, so we cannot do everything we said we were going to do. Unlike a calendar or task management app, it can tell you which ones are the most important.
 - Sleep management. Following the past two points, it keeps you accountable with your sleep schedule. You can miss workouts or home cooked meals but when you work or stay up late into the night, it will definitely affect you.
 
-⏱️ **Time to a working bot: ~2 hours** (copy-paste DIY), 15 min [with this script](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) or get on a call for more complex setups.
-TODO: For the last CTA in the line above, add a link to the done for you section
+**Time to a working bot: ~2 hours** (copy-paste DIY), 15 min [with this script](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) or [get on a call](README.md#-done-for-you-setup-services) for more complex setups.
 
-> 📩 **Want this running in 15 min?** [Get the one-click deploy kit →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva)
+> **Want this running in 15 min?** [Get the one-click deploy kit →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva)
 
 ---
 
@@ -47,13 +46,17 @@ TODO: For the last CTA in the line above, add a link to the done for you section
 
 Steal these. They're the exact prompts I use every day.
 
+Together, they're **The Anchor Method**: three daily check-ins that hold your day in place.
+
 | Workflow | What happens |
 |----------|-------------|
 | **🌅 Morning Anchor** | 7am check-in. "What's one thing today?" Sets the day's tone in 30 seconds. |
 | **📊 Daily Check-in** | Evening 3-question log. Mood, energy, wins. Voice notes or one-word texts work. |
 | **🌙 Evening Wind-Down** | 9:30pm nudge. Protects your sleep — the single most important factor for mood stability. |
 
-[Get the here →](WORKFLOWS.md#free-workflows)
+[Get them here →](WORKFLOWS.md#free-workflows)
+
+> **Try it before you pay anything.** Install the three free workflows and run them for a week. Feel what it's like to have something check in on you at 7am instead of waiting for you to remember. If you want it done for you after that, the setup services are right here. If not, you've lost an afternoon. That's the point.
 
 ---
 
@@ -90,8 +93,8 @@ Steal these. They're the exact prompts I use every day.
 
 The agent runs on a server. You talk to it from your phone via Telegram — like texting a friend. You only touch the technical stuff during setup.
 
-**🚀 Quick start:** [SETUP.md — free guided walkthrough](SETUP.md) (works with your phone alone).
-**🔧 Detailed guide:** [INSTALL.md — guided installation](INSTALL.md).
+**Quick start:** [SETUP.md — free guided walkthrough](SETUP.md) (works with your phone alone).
+**Detailed guide:** [INSTALL.md — guided installation](INSTALL.md).
 
 
 ## FAQ
@@ -123,6 +126,8 @@ Those work too. Pick your provider during `hermes model`.
 
 > **You don't touch the terminal. I set everything up for you.**
 
+> **Is this just for Kevin?** Fair question. I'm one person, not a company, and I'm my own main beta tester. Here's what that means for you: every workflow is plain text, and you can read every word before you pay. Nothing is a black box. Mood, energy, sleep, task-load, all of it gets tuned to *your* patterns on the call, not to mine. And if it doesn't fit you, the refund is unconditional. The worst case is you're out 30 minutes of reading.
+
 
 | | | |
 |:--:|:--:|:--:|
@@ -130,26 +135,37 @@ Those work too. Pick your provider during `hermes model`.
 | **$60** | **$199** | **$599** |
 | one-time | one-time | one-time |
 | | | |
-| ✅ Full repo access | ✅ Everything in Starter | ✅ Everything in Done-For-You |
-| ✅ 5 workflow templates | ✅ 45-min live setup call | ✅ 5 custom workflows |
-| ✅ **One-click deploy kit** — paste 1 file, live in 4 min | ✅ Full installation on your machine/VPS | ✅ Monthly check-in calls (3 months) |
-| ✅ 15-min video walkthrough | ✅ Telegram bot connected & tested | ✅ Priority support |
-| ✅ 1 week email support | ✅ Workflows customized to YOUR routine | ✅ Custom integrations (Notion, Calendar, etc.) |
-| | ✅ 2 weeks follow-up support | ✅ 🧠 ND-specific tuning (executive function, RSD, focus patterns) |
-| | ✅ Setup reference guide | ✅ 📈 Monthly pattern report — mood, energy, sleep trends |
-| | ⏱️ 2–4 hrs of your time across the call | ✅ 🚨 Crisis escalation setup (trusted contact alert) |
-| | | ✅ 🧰 Custom tools & automations (task unstuck, habits, meds) |
-| | | ✅ 🎓 1:1 onboarding + usage coaching sessions |
-| **Zero technical friction — no terminal, no SSH** | **Most popular — just works** | **For professionals who want a partner** |
+| Full repo access | Everything in Starter | Everything in Done-For-You |
+| The three free workflows + setup templates | 45-min live setup call | 5 custom workflows |
+| **One-click deploy kit** — paste 1 file, live in 4 min | Full installation on your machine/VPS | Monthly check-in calls (3 months) |
+| 15-min video walkthrough | Telegram bot connected & tested | Priority support |
+| 1 week email support | Workflows customized to YOUR routine | Custom integrations (Notion, Calendar, etc.) |
+| **Day-1 bonuses:** Week-One Checklist, Relapse Reset, Sleep Protocol | | |
+| | 2 weeks follow-up support | ND-specific tuning (executive function, RSD, focus patterns) |
+| | Setup reference guide | Monthly pattern report — mood, energy, sleep trends |
+| | 3 premium workflows included — $30 value if bought separately | |
+| | **Day-1 bonuses:** Week-One Checklist, Relapse Reset, Sleep Protocol | |
+| | 2–4 hrs of your time across the call | Crisis escalation setup (trusted contact alert) |
+| | | Custom tools & automations (task unstuck, habits, meds) |
+| | | 1:1 onboarding + usage coaching sessions |
+| | | **Day-1 bonuses:** Week-One Checklist, Relapse Reset, Sleep Protocol |
+| **Skip the 2-hour setup — I'm here if you get stuck** | **Most popular — you get a working bot in one call** | **For professionals who want a partner** |
 | | | |
 | [Get Starter →](https://buy.polar.sh/polar_cl_o4Tuaepm65AqQgHWUKW7K9vmlO9mvxANJXpvV2MRLva) | [Get Done-For-You →](https://buy.polar.sh/polar_cl_S54SOTeMABojUgsNYT1hPMViHnczfM2Bkr7IK2HDTtn) | [Get Premium →](https://buy.polar.sh/polar_cl_9qFE7mpFbSAMoTcb5l0fl9QOMsfpfylfyQPzv1UpTQn) |
+| 30-day refund, no questions asked | 30-day refund, no questions asked | 30-day refund, no questions asked |
+| | Your money back if we don't leave your setup call with a tested, working bot | Your money back if we don't leave your setup call with a tested, working bot |
+| | It's just me on these calls, so I take a limited number each week | It's just me on these calls, so I take a limited number each week |
 
 
-> **🛡️ Risk reversal:** Not happy with your purchase? Full refund, no questions asked — just email **kevinyosef54@gmail.com**. I'd rather you have a working system than keep your money.
+> **Risk reversal:** Not happy with your purchase within your first 30 days? Email **kevinyosef54@gmail.com** and I'll refund you in full. No forms, no "did you try harder?" interrogation, no guilt. I'd rather you have a working system than keep your money.
 
-> 📅 **After you pay:** you'll get a booking link to schedule your setup call (Done-For-You & Premium). The call is where we do the work together — no sales pitch, just setup.
+> **Setup guarantee (Done-For-You & Premium):** If we don't leave your setup call with a tested, working bot that replies to you on Telegram, your money back, and I keep working until it's live. Same 30-day refund applies after that.
 
-> 💡 **One-time cost caveats:** The Starter Pack's one-click deploy kit needs a VPS (~$5/mo, ~$60/yr) — Hetzner or DigitalOcean. The Done-For-You setup takes **2–4 hours of your time** across the call (account creation, questions, personalization). You're paying for my expertise AND your time savings — the work is still yours to configure with me.
+> **Booking honestly (Done-For-You & Premium):** The setup calls are live and it's just me, so I take a limited number each week. If the calendar's full, you pick the next open slot. Nothing expires, no countdown. I'd rather book you when I can actually show up than sell you a slot I can't fill.
+
+> **After you pay:** you'll get a booking link to schedule your setup call (Done-For-You & Premium). The call is where we do the work together — no sales pitch, just setup.
+
+> **One-time cost caveats:** The Starter Pack's one-click deploy kit needs a VPS (~$5/mo, ~$60/yr) — Hetzner or DigitalOcean. The Done-For-You setup takes **2–4 hours of your time** across the call (account creation, questions, personalization). You're paying for my expertise AND your time savings — the work is still yours to configure with me.
 
 ---
 

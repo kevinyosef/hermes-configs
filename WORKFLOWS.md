@@ -12,6 +12,8 @@ These are ready to use — no files to copy, no config to edit.
 | 📊 Daily Check-in | `workflows/daily-checkin.md` | Evening 3-question mood/energy/wins log. Voice notes or one-word texts work. |
 | 🌙 Evening Wind-Down | `workflows/evening-winddown.md` | 9:30pm bedtime nudge. Sleep is the #1 lever for mood stability. |
 
+**Included in** every paid setup tier, and free to install on your own.
+
 ### How to Install a Free Workflow
 
 1. Complete the setup in [INSTALL.md](INSTALL.md) — install Hermes, connect a provider, set up the Telegram bot and gateway.
