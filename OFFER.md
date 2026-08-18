@@ -12,11 +12,11 @@ Three one-time tiers, plus three premium workflows sold individually:
 
 | Tier | Price | What it includes |
 |------|-------|------------------|
-| **💼 Starter Pack** | **$60** one-time | Full repo access, 5 workflow templates, the one-click deploy kit ("paste 1 file, live in 4 min"), a 15-min video walkthrough, 1 week of email support. Buyer installs. |
+| **💼 Starter Pack** | **$60** one-time | Full repo access, 5 workflow templates (Morning Anchor, Daily Check-in, Evening Wind-Down, Burnout Early Warning, Task Unstucker), the one-click deploy kit ("paste 1 file, live in 4 min"), a 15-min video walkthrough, 1 week of email support. Buyer installs. |
 | **⚡ Done-For-You** | **$199** one-time | Everything in Starter, plus a 45-min live setup call, full installation on the buyer's machine/VPS, Telegram bot connected & tested, workflows customized to their routine, 2 weeks of follow-up support, a setup reference guide. Buyer still spends **2–4 hours of their own time** across the call (account creation, questions, personalization). Labeled **"Most popular — just works."** |
 | **🎯 Premium** | **$599** one-time | Everything in Done-For-You, plus 5 custom workflows, monthly check-in calls for 3 months, priority support, custom integrations (Notion, Calendar, etc.), ND-specific tuning, a monthly pattern report (mood/energy/sleep trends), crisis escalation setup, custom tools & automations, 1:1 onboarding + usage coaching. |
 
-**Premium workflows** (sold separately at **$10 each**): ⚠️ Burnout Early Warning, 🧩 Task Unstucker, 💼 Job Hunt Assistant. Per WORKFLOWS.md they ship with Done-For-You and Premium (not Starter). Note: the three `workflows/*.md` files themselves say "Included in **all** paid packages" — an inconsistency to resolve (see §5.6).
+**Premium workflows** (sold separately at **$10 each**): ⚠️ Burnout Early Warning, 🧩 Task Unstucker, 💼 Job Hunt Assistant. **Inclusion is now decided:** Burnout Early Warning and Task Unstucker ship with the Starter Pack (they're two of its five workflow templates) *and* with Done-For-You and Premium; Job Hunt Assistant ships with Done-For-You and Premium only (it's the tier differentiator). All three agree across README.md, WORKFLOWS.md, and `workflows/*.md`.
 
 **Existing guarantee:** "Not happy with your purchase? Full refund, no questions asked — just email kevinyosef54@gmail.com. I'd rather you have a working system than keep your money." (README, one italic line below the pricing table.)
 
@@ -137,8 +137,8 @@ No fake countdowns, no "only 3 spots left." If the seller ever wants to do a fou
 
 - Add **"The Anchor Method"** as the name for the three daily check-ins (§4.1.4).
 - Tier names are fine. The Done-For-You tagline could be outcome-tightened: from "Most popular — just works" to "Most popular — you get a working bot in one call." One line, keeps the positioning.
-- Resolve the **"5 workflow templates"** ambiguity on Starter (the repo has 6 workflows; which 5?). State plainly which files are included, or say "the three free workflows + setup templates."
-- Fix the **premium-inclusion inconsistency**: WORKFLOWS.md says premium workflows ship with Done-For-You + Premium; the `workflows/*.md` files say "all paid packages." Decide which is true, then make all three files agree.
+- ~~Resolve the **"5 workflow templates"** ambiguity on Starter~~ **DECIDED:** the five are Morning Anchor, Daily Check-in, Evening Wind-Down (free) + Burnout Early Warning + Task Unstucker (premium). Job Hunt Assistant is deliberately excluded so it stays the Done-For-You/Premium differentiator. Named in README.md and OFFER §1.
+- ~~Fix the **premium-inclusion inconsistency**~~ **DECIDED:** Burnout Early Warning + Task Unstucker are included in **every** paid tier (Starter, Done-For-You, Premium); Job Hunt Assistant is included in Done-For-You and Premium only. README.md, WORKFLOWS.md, and the three `workflows/*.md` files now agree. Implication for the $10 individual sale: it still stands — the add-on is for buyers who don't want a full setup tier, or want Job Hunt on its own.
 
 ---
 
@@ -165,7 +165,7 @@ No fake countdowns, no "only 3 spots left." If the seller ever wants to do a fou
 3. **Bonus stack** — add the three day-1 asset bonuses (Week-One Checklist, Relapse Reset, Sleep Protocol) to the tier lists; add the "3 premium workflows included" line to Done-For-You (deliverables only, no new links). Decide the micro-script question before Starter ships.
 4. **Effort reduction** — async intake form; retime the "your time" caveat; default decisions from the intake answers (process change, no pricing impact).
 5. **Capacity scarcity** — add the honest "booking" line under DFY/Premium buttons (copy only).
-6. **Consistency cleanups** — resolve the premium-inclusion mismatch (WORKFLOWS.md vs `workflows/*.md`) and the "5 workflow templates" ambiguity.
+6. ~~**Consistency cleanups**~~ **DONE** — premium-inclusion mismatch and "5 workflow templates" ambiguity resolved (see §4.5): Burnout + Task Unstucker ship with all three tiers; Job Hunt ships with Done-For-You + Premium; Starter's five templates are named.
 7. **Later, optional, only if desired** — payment plans, a discounted workflow bundle, founding pricing. Each is a real product change → **[NEEDS NEW POLAR LINK + SELLER DECISION]**.
 
 ---

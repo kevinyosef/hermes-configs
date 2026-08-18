@@ -31,7 +31,7 @@ Every workflow is plain text. Change the questions, the time, the tone — anyth
 
 ## Premium Workflows
 
-These ship as part of the [Done-For-You Setup](README.md#-done-for-you-setup-services) and Premium tiers, or **individually for $10 each** below. The files in `workflows/` are descriptions — the full prompts are delivered after purchase so they're tuned to *your* life.
+These ship as part of the paid setups (Burnout Early Warning and Task Unstucker are included in the [Starter Pack](README.md#-done-for-you-setup-services); all three are included in [Done-For-You](README.md#-done-for-you-setup-services) and Premium), or **individually for $10 each** below. The files in `workflows/` are descriptions — the full prompts are delivered after purchase so they're tuned to *your* life.
 
 | Workflow | File | What it does | Buy |
 |----------|------|-------------|-----|

@@ -136,7 +136,7 @@ Those work too. Pick your provider during `hermes model`.
 | one-time | one-time | one-time |
 | | | |
 | Full repo access | Everything in Starter | Everything in Done-For-You |
-| The three free workflows + setup templates | 45-min live setup call | 5 custom workflows |
+| **5 workflow templates:** Morning Anchor, Daily Check-in, Evening Wind-Down + Burnout Early Warning + Task Unstucker | 45-min live setup call | 5 custom workflows |
 | **One-click deploy kit** — paste 1 file, live in 4 min | Full installation on your machine/VPS | Monthly check-in calls (3 months) |
 | 15-min video walkthrough | Telegram bot connected & tested | Priority support |
 | 1 week email support | Workflows customized to YOUR routine | Custom integrations (Notion, Calendar, etc.) |

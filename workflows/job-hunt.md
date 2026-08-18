@@ -24,11 +24,10 @@ I built this after two years without a job, knowing that the application process
 
 ## How to Get It
 
-Included in all paid packages:
+Included in the Done-For-You and Premium setups (not the Starter Pack, which covers the five daily check-in and recovery workflows):
 
 | Package | Includes |
 |---------|----------|
-| **Starter Pack ($60)** | Full prompt + trigger config |
 | **Done-For-You ($199)** | Installed, configured, and tested |
 | **Premium ($599)** | Custom role targeting + ongoing search tuning |
 
